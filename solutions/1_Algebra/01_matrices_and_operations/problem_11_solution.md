@@ -11,7 +11,7 @@ Find the conditions on $a,b,c,d$ under which $AB=BA$. Describe the general form 
 This problem applies foundational mathematical principles:
 - Rigorous application of core definitions and operator properties.
 - Analytical transformations preserving structural invariants.
-- Systematic reduction to canonical and solvable forms.
+- Systematic reduction to canonical and solvable forms
 
 ## 3. Detailed Step-by-Step Solution
 1. **Compute Both Products:**
