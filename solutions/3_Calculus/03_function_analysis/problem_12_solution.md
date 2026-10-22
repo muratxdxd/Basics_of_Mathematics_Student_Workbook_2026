@@ -21,6 +21,18 @@ This problem applies foundational mathematical principles:
    $$f(x) = |x^2 - 4| = \begin{cases} x^2 - 4, & \text{if } |x| \ge 2, \\ 4 - x^2, & \text{if } |x| < 2. \end{cases}$$
    The absolute value leaves the positive portions ($|x| \ge 2$) unchanged, while reflecting the negative dip ($x \in (-2, 2)$) vertically across the $x$-axis, turning the valley at $(0, -4)$ into an inverted parabolic peak at $(0, 4)$.
 
+   ```text
+   Original y=x²−4                 After absolute value
+   y                              y
+   ↑                              ↑             ● (0,4)
+   |         ╱   ╲                |          ╭──┴──╮
+   0 ──────●───────●────→ x       0 ──────●──╯─────╰──●────→ x
+          (-2,0) (2,0)                    (-2,0)     (2,0)
+   |          ╲ ● ╱               |
+   |           (0,-4)             |
+   ```
+   The original vertex $(0,-4)$ is reflected to the peak $(0,4)$, while $(\pm2,0)$ remain fixed and become corners of $|x^2-4|$.
+
 3. **Points Where the Derivative Does Not Exist:**
    The derivative does not exist at **$x = -2$** and **$x = 2$**.
    - **Analytical Justification at $x = 2$:**

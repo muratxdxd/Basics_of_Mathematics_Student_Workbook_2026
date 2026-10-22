@@ -19,10 +19,15 @@ This problem applies foundational mathematical principles:
 
 ## 3. Detailed Step-by-Step Solution
 1. **Calculate Powers of $F$:**
-   $$F^2 = \begin{pmatrix}1&1\\1&0\end{pmatrix}\begin{pmatrix}1&1\\1&0\end{pmatrix} = \begin{pmatrix}2&1\\1&1\end{pmatrix}.$$
-   $$F^3 = F^2 F = \begin{pmatrix}2&1\\1&1\end{pmatrix}\begin{pmatrix}1&1\\1&0\end{pmatrix} = \begin{pmatrix}3&2\\2&1\end{pmatrix}.$$
-   $$F^4 = F^3 F = \begin{pmatrix}3&2\\2&1\end{pmatrix}\begin{pmatrix}1&1\\1&0\end{pmatrix} = \begin{pmatrix}5&3\\3&2\end{pmatrix}.$$
-   $$F^5 = F^4 F = \begin{pmatrix}5&3\\3&2\end{pmatrix}\begin{pmatrix}1&1\\1&0\end{pmatrix} = \begin{pmatrix}8&5\\5&3\end{pmatrix}.$$
+   For any $\begin{pmatrix}r&s\\u&v\end{pmatrix}$, multiplying by $F$ gives
+   $$\begin{pmatrix}r&s\\u&v\end{pmatrix}F
+   =\begin{pmatrix}r(1)+s(1)&r(1)+s(0)\\u(1)+v(1)&u(1)+v(0)\end{pmatrix}
+   =\begin{pmatrix}r+s&r\\u+v&u\end{pmatrix}.$$
+   Applying this row-by-column rule successively:
+   $$F^2 = \begin{pmatrix}1+1&1\\1+0&1\end{pmatrix} = \begin{pmatrix}2&1\\1&1\end{pmatrix}.$$
+   $$F^3 = F^2F = \begin{pmatrix}2+1&2\\1+1&1\end{pmatrix} = \begin{pmatrix}3&2\\2&1\end{pmatrix}.$$
+   $$F^4 = F^3F = \begin{pmatrix}3+2&3\\2+1&2\end{pmatrix} = \begin{pmatrix}5&3\\3&2\end{pmatrix}.$$
+   $$F^5 = F^4F = \begin{pmatrix}5+3&5\\3+2&3\end{pmatrix} = \begin{pmatrix}8&5\\5&3\end{pmatrix}.$$
 
 2. **Relationship with Fibonacci Sequence:**
    Let $f_0=0, f_1=1, f_2=1, f_3=2, f_4=3, f_5=5, f_6=8, \ldots$ where $f_{n+1} = f_n + f_{n-1}$.

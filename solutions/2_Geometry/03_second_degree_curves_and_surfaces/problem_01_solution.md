@@ -37,5 +37,60 @@ This problem applies foundational mathematical principles:
    - **Features:** Vertices at $(\pm 3, 0)$, real semiaxis $a = 3$, imaginary semiaxis $b = 2$. Asymptotes: $y = \pm \frac{b}{a}x = \pm \frac{2}{3}x$. Opens to the left and right.
    - **Recognition:** Both variables are squared, but with opposite signs (difference of squares equals $1$).
 
-## 4. Verification and Consistency Checks
+## 4. Sketches
+The sketches are qualitative; each axis is labeled, and the marked points correspond to the listed features.
+
+1. Circle, radius $3$ (intercepts $(\pm3,0)$ and $(0,\pm3)$):
+```text
+                 y
+                 ^
+              (0,3)
+               .-|-.
+            .-'  |  '-.
+(-3,0)  <---(-----O----->  (3,0)  x
+            '-.  |  .-'
+               '-|-'
+              (0,-3)
+```
+
+2. Ellipse, semiaxes $4$ and $3$ (intercepts $(\pm4,0)$ and $(0,\pm3)$):
+```text
+                 y
+                 ^
+              (0,3)
+          .-----|-----.
+(-4,0) <(--------O--------)> (4,0)  x
+          '-----|-----'
+              (0,-3)
+```
+
+3. Right-opening parabola (vertex $(0,0)$, focus $(2,0)$, directrix $x=-2$):
+```text
+                 y
+                 ^
+          .      |       .
+           '.    |     .'
+            '.   |   .'
+ x=-2  - - -|----V--F--------> x
+            .'   |   '.
+           .'    |     '.
+          '      |       '
+                (0,0) (2,0)
+```
+
+4. Horizontal hyperbola (vertices $(\pm3,0)$; asymptotes $y=\pm2x/3$):
+```text
+                 y
+                 ^
+       \         |         /
+        \    (   |   )    /       y=2x/3
+         \  (    |    )  /
+----------*------O------*----------> x
+         /  (    |    )  \
+        /    (   |   )    \       y=-2x/3
+       /         |         \
+      (-3,0)             (3,0)
+```
+
+## 5. Verification and Consistency Checks
 The analytical derivation is verified through algebraic consistency, dimensional checking, and direct substitution back into the governing problem definitions.

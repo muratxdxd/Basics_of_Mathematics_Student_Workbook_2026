@@ -26,5 +26,17 @@ This problem applies foundational mathematical principles:
    The ellipse is elongated along the **horizontal $x$-axis** ($a = 5 > b = 3$).
    In the canonical equation $\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$, the denominator under each variable represents the square of the maximum excursion (semiaxis) along that coordinate axis. Since $25 > 9$, the maximum extent along $x$ ($\pm 5$) is greater than along $y$ ($\pm 3$).
 
-## 4. Verification and Consistency Checks
+## 4. Sketch
+The ellipse is centered at the origin, with its horizontal major axis and all four intercepts marked:
+```text
+                 y
+                 ^
+              (0,3)
+           .-----|-----.
+(-5,0) <---(-----O----->)--- (5,0)  x
+           '-----|-----'
+              (0,-3)
+```
+
+## 5. Verification and Consistency Checks
 The analytical derivation is verified through algebraic consistency, dimensional checking, and direct substitution back into the governing problem definitions.

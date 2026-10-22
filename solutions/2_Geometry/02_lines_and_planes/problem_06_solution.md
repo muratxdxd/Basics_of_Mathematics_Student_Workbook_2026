@@ -22,14 +22,14 @@ This problem applies foundational mathematical principles:
    The components of $n_1$ and $n_2$ are not proportional ($\frac{1}{1} \neq \frac{1}{-1}$), so $n_1 \neq c n_2$. The planes are **not parallel**.
 
 3. **Compute Angle Between Planes:**
-   The acute angle $\theta$ between two planes is the angle between their normal lines:
+   The smaller angle $\theta$ between two planes is the angle between their normal lines; it can be $90^\circ$. A normal line has no preferred direction: reversing one normal may replace the angle between chosen vectors by its supplement. The absolute value in the formula therefore selects the smaller angle:
    $$\cos\theta = \frac{|n_1 \cdot n_2|}{\|n_1\| \|n_2\|}.$$
    $$n_1 \cdot n_2 = 1(1) + 1(-1) + 1(0) = 1 - 1 + 0 = 0.$$
    $$\cos\theta = 0 \implies \theta = 90^\circ = \frac{\pi}{2}\text{ rad}.$$
    The two planes are **perpendicular**.
 
 4. **Why Normal Vectors Suffice:**
-   Every plane is rigidly determined in orientation by its normal line. Rotating or tilting a plane by an angle $\theta$ rotates its normal vector by the exact same angle $\theta$. Thus, the dihedral angle between two planes is identical to the angle between their respective normal vectors.
+   Every plane is rigidly determined in orientation by its normal line. Rotating or tilting a plane by an angle $\theta$ rotates its normal line by the exact same angle $\theta$. Thus, the smaller dihedral angle between two planes is identical to the smaller angle between their normal lines.
 
 ## 4. Verification and Consistency Checks
 The analytical derivation is verified through algebraic consistency, dimensional checking, and direct substitution back into the governing problem definitions.

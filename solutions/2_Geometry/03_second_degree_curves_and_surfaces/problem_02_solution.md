@@ -17,14 +17,14 @@ This problem applies foundational mathematical principles:
 1. **Complete the Square:**
    Group $x$ and $y$ terms:
    $$(x^2 - 6x) + (y^2 + 4y) - 3 = 0.$$
+   For a linear coefficient $b$, completing $u^2+bu$ requires adding and subtracting $(b/2)^2$. Here the half-coefficients are $-3$ for $x$ and $2$ for $y$, so we add and subtract $(-3)^2=9$ and $2^2=4$:
    $$(x^2 - 6x + 9) - 9 + (y^2 + 4y + 4) - 4 - 3 = 0.$$
    $$(x - 3)^2 + (y + 2)^2 - 16 = 0.$$
    **Canonical Form:**
    $$(x - 3)^2 + (y + 2)^2 = 16 = 4^2.$$
 
 2. **Center and Radius:**
-   - Center: $(x_0, y_0) = (3, -2)$.
-   - Radius: $R = \sqrt{16} = 4$.
+   Compare with the standard circle form $(x-h)^2+(y-k)^2=r^2$. Thus the center is $(h,k)=(3,-2)$ and the radius is $r=\sqrt{16}=4$.
 
 3. **Substitution of Two Points on the Circle:**
    - **Point 1:** $(x_0 + R, y_0) = (3 + 4, -2) = (7, -2)$:

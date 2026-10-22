@@ -35,6 +35,20 @@ This problem applies foundational mathematical principles:
      - Vertical semiaxis: $b = \sqrt{4} = 2$.
      - Vertices: $(1 \pm 3, -2) \implies (-2, -2)$ and $(4, -2)$.
      - Co-vertices: $(1, -2 \pm 2) \implies (1, -4)$ and $(1, 0)$.
+   - **Sketch:** The ellipse is centered at $(1,-2)$, with horizontal major axis and the four vertices/co-vertices shown:
+```text
+                 y
+                 ^
+                 |                 * (1,0)
+      ------------O----------------------------> x
+                 |        .-------' '-.
+                 |     .-'      |      '-.
+      (-2,-2) *--|----C-------------------* (4,-2)
+                 |     '-.      |      .-'
+                 |        '-----*-----'
+                 |            (1,-4)
+                 v          C=(1,-2)
+```
 
 2. **Equation 2: $4x^2 + y^2 = z^2$:**
    - **Cross-sections $z = c$:**
@@ -50,6 +64,28 @@ This problem applies foundational mathematical principles:
      A pair of intersecting lines with steeper slope $\pm 2$.
    - **Identification:**
      Combining elliptical horizontal cross-sections that scale linearly with $|z|$ and linear triangular vertical profiles, the surface is an **Elliptic Cone** with vertex at the origin $(0, 0, 0)$ and central axis along the $z$-axis.
+   - **Sketch:** At each nonzero height $z=c$, the horizontal ellipse has $x$-semiaxis $|c|/2$ and $y$-semiaxis $|c|$, so its $y$-semiaxis is twice its $x$-semiaxis:
+```text
+                            z
+                            ^
+                 .----------|----------.   z=c: y semiaxis |c|,
+              .-'           |           '-.       x semiaxis |c|/2
+             /              |              \
+             \              |              /
+              '-.           |           .-'
+                  '-.       |       .-'
+                      '-.   |   .-'
+                          \  |  /
+                           \ | /
+                            \|/
+                             O----------------> x
+                            /|\
+                           / | \
+                          /  |  \
+                         /   |   \
+                        v    y
+                   apex (0,0,0)
+```
 
 ## 4. Verification and Consistency Checks
 The analytical derivation is verified through algebraic consistency, dimensional checking, and direct substitution back into the governing problem definitions.

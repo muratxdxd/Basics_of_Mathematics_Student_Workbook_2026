@@ -19,6 +19,7 @@ This problem applies foundational mathematical principles:
    Critical points: $x = -\sqrt{2}, 0, \sqrt{2}$.
    - At $x = \pm\sqrt{2}$: $f(\pm\sqrt{2}) = (\sqrt{2})^4 - 4(\sqrt{2})^2 = 4 - 8 = -4 \implies$ **Local Minima** at $(-\sqrt{2}, -4)$ and $(\sqrt{2}, -4)$.
    - At $x = 0$: $f(0) = 0 \implies$ **Local Maximum** at $(0, 0)$.
+   The second-derivative test confirms these classifications: $f''(0)=-8<0$, so $(0,0)$ is a local maximum, while $f''(\pm\sqrt2)=16>0$, so both points with $x=\pm\sqrt2$ are local minima. Equivalently, $f'$ changes from negative to positive at $-\sqrt2$, positive to negative at $0$, and negative to positive at $\sqrt2$.
 
 2. **Second Derivative, Inflection Points, and Convexity:**
    $$f''(x) = 12x^2 - 8 = 4(3x^2 - 2).$$
@@ -29,6 +30,22 @@ This problem applies foundational mathematical principles:
    **Inflection Points:**
    $$f\left(\pm\sqrt{\frac{2}{3}}\right) = \left(\frac{2}{3}\right)^2 - 4\left(\frac{2}{3}\right) = \frac{4}{9} - \frac{8}{3} = -\frac{20}{9} \approx -2.22.$$
    Points: $\left(-\sqrt{\frac{2}{3}}, -\frac{20}{9}\right)$ and $\left(\sqrt{\frac{2}{3}}, -\frac{20}{9}\right)$.
+   The sign changes of $f''$ at both roots show that the concavity changes there; the graph is concave up outside those roots and concave down between them.
+
+3. **W-shaped Sketch (features in left-to-right order):**
+   Both inflection points lie between the two minima and the central maximum. The curve is symmetric about the $y$-axis and rises at both ends.
+   ```text
+   y
+   ↑
+   0                         ● (0,0) local max
+   |                       ╱   ╲
+   |                    •         •   inflections at x=±√(2/3)
+   |                  ╱             ╲
+  -4       ●────────╯                 ╰────────●
+          (-√2,-4)                           (√2,-4)
+   ───────────────────────────────────────────────→ x
+          local min                            local min
+   ```
 
 ## 4. Verification and Consistency Checks
 The analytical derivation is verified through algebraic consistency, dimensional checking, and direct substitution back into the governing problem definitions.

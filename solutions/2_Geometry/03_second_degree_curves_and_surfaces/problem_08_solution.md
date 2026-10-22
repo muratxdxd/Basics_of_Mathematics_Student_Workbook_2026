@@ -15,12 +15,12 @@ This problem applies foundational mathematical principles:
 
 ## 3. Detailed Step-by-Step Solution
 1. **Complete the Square:**
+   The half-coefficients of the linear terms $-4x$, $2y$, and $-6z$ are $-2$, $1$, and $-3$. We complete each square by adding and subtracting their squares, $4$, $1$, and $9$:
    $$(x^2 - 4x + 4) + (y^2 + 2y + 1) + (z^2 - 6z + 9) - 4 - 1 - 9 - 2 = 0.$$
    $$(x - 2)^2 + (y + 1)^2 + (z - 3)^2 = 16 = 4^2.$$
 
 2. **Center and Radius:**
-   - Center: $(x_0, y_0, z_0) = (2, -1, 3)$.
-   - Radius: $R = \sqrt{16} = 4$.
+   Compare with the standard sphere form $(x-h)^2+(y-k)^2+(z-\ell)^2=r^2$. The squared-distance formula from $(h,k,\ell)$ gives the center $(2,-1,3)$, and $r=\sqrt{16}=4$.
 
 3. **Two Points and Verification:**
    - **Point 1:** $(x_0 + R, y_0, z_0) = (2 + 4, -1, 3) = (6, -1, 3)$:

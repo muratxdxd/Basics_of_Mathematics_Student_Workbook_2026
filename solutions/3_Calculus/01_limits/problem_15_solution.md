@@ -21,6 +21,18 @@ This problem applies foundational mathematical principles:
    - $n = 10\,000$: $a_{10000} \approx 1.99935$
    *Observation:* As $n$ grows, $a_n$ monotonically increases toward $2$.
 
+   ```text
+   a_n
+    ↑
+   2 ┄ ┄ ┄ ┄ ┄ ┄ ┄ ┄ ┄ ┄ ┄ ┄ ┄ ┄ ┄  limit level
+    │                    • • • •
+    │           • • •
+    │       •
+    │   •
+    └──────────────────────────────→ n
+   ```
+   The dots represent discrete sequence values, not a continuous curve; they get closer to $y=2$.
+
 2. **Chosen Function: $f(x) = \frac{x^2-4x+3}{x-3}$ as $x \to 3$ (from Exercise 7):**
    - **Approaching from the left ($x \to 3^-$):**
      - $x = 2.9 \implies f(2.9) = 2.9 - 1 = 1.9$
@@ -31,6 +43,20 @@ This problem applies foundational mathematical principles:
      - $x = 3.01 \implies f(3.01) = 2.01$
      - $x = 3.001 \implies f(3.001) = 2.001$
    *Observation:* From both sides, the values symmetrically converge to $2.0$.
+
+   ```text
+    y
+    ↑
+    │                 ○ (3, 2)
+    │               ╱
+    │             ╱       y = x - 1, except at x = 3
+    │           ╱
+    ┼─────────╱────────────────────→ x
+    │       ╱
+   ```
+   The open circle marks the missing point: the graph follows the line on both sides but has no value at $x=3$.
+
+   **Comparison with Exercises 1 and 7:** As in Exercise 1, the sequence's limit is found by normalizing numerator and denominator by the highest power, $n^2$, leaving the leading-coefficient ratio $4/2=2$. As in Exercise 7, factor the function's numerator as $(x-1)(x-3)$ and cancel $x-3$ for $x\ne3$, giving $f(x)=x-1$ near (but not at) $3$. This cancellation explains the line and its hole; the function's limit is also $2$.
 
 3. **Observation Versus Mathematical Proof:**
    - **Why empirical data is not a proof:** Calculating a table of values or observing a plot tests only a tiny finite sample of points. It cannot reveal if a function has high-frequency microscopic oscillations near the limit point (such as $\sin(1/x)$), nor can it detect if a sequence alters its behavior for numbers larger than tested (e.g., $n > 10^{100}$). Numerical evaluations are also subject to machine floating-point rounding errors.

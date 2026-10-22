@@ -37,7 +37,8 @@ This problem applies foundational mathematical principles:
    - Candidate 2: $x_2 = \frac{35 + 5\sqrt{13}}{3} \approx \frac{35 + 18.028}{3} \approx 17.676\text{ cm} \notin (0, 15)$.
    Check second derivative at $x_1$:
    $$V''(x) = 24x - 280 \implies V''(5.657) \approx 24(5.657) - 280 = 135.77 - 280 = -144.23 < 0.$$
-   The maximum volume occurs at $x = \frac{35 - 5\sqrt{13}}{3} \approx 5.66\text{ cm}$, yielding volume $V \approx 3032.3\text{ cm}^3$.
+   This second-derivative test establishes a local maximum. For the global conclusion, the other root is $x_2\approx17.676>15$, so on the admissible interval $(0,15)$ the derivative is positive before $x_1$ and negative after it: the quadratic factor $3x^2-70x+300$ opens upward and has roots $x_1<x_2$. Hence $V$ increases up to $x_1$ and decreases from $x_1$ to $15$. Also, $V(x)\to0$ as $x\to0^+$ and as $x\to15^-$. Therefore $x_1$ gives the global maximum on the physical domain:
+   $$x=\frac{35-5\sqrt{13}}{3}\approx5.66\text{ cm},\qquad V\approx3032.3\text{ cm}^3.$$
 
 ## 4. Verification and Consistency Checks
 The analytical derivation is verified through algebraic consistency, dimensional checking, and direct substitution back into the governing problem definitions.

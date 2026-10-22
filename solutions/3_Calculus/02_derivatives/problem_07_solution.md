@@ -18,6 +18,7 @@ This problem applies foundational mathematical principles:
    - **Outer function:** $g(u) = \sin u \implies g'(u) = \cos u$.
    - **Inner function:** $u(x) = x^2 + 1$.
    - **Derivative of the inner function:** $u'(x) = 2x$.
+   The sine is applied to the entire inner expression $u=x^2+1$, not directly to $x$. Differentiate the outer sine with respect to its input $u$, then multiply by the rate of change of that input with respect to $x$.
 
 2. **Combine via Chain Rule:**
    $$f'(x) = g'(u(x)) \cdot u'(x) = \cos(x^2 + 1) \cdot (2x) = 2x\cos(x^2 + 1).$$

@@ -15,12 +15,20 @@ This problem applies foundational mathematical principles:
 
 ## 3. Detailed Step-by-Step Solution
 1. **Compute $(AB)^{-1}$:**
-   $$AB = \begin{pmatrix}1&1\\0&1\end{pmatrix}\begin{pmatrix}2&0\\0&3\end{pmatrix} = \begin{pmatrix}2 & 3 \\ 0 & 3\end{pmatrix}.$$
+   $$AB = \begin{pmatrix}1&1\\0&1\end{pmatrix}\begin{pmatrix}2&0\\0&3\end{pmatrix}
+   = \begin{pmatrix}1(2)+1(0)&1(0)+1(3)\\0(2)+1(0)&0(0)+1(3)\end{pmatrix}
+   = \begin{pmatrix}2 & 3 \\ 0 & 3\end{pmatrix}.$$
    $$\det(AB) = 2(3) - 3(0) = 6.$$
    $$(AB)^{-1} = \frac{1}{6}\begin{pmatrix}3 & -3 \\ 0 & 2\end{pmatrix} = \begin{pmatrix}\frac{1}{2} & -\frac{1}{2} \\ 0 & \frac{1}{3}\end{pmatrix}.$$
 
 2. **Compute $B^{-1}A^{-1}$:**
-   $$A^{-1} = \begin{pmatrix}1 & -1 \\ 0 & 1\end{pmatrix}, \qquad B^{-1} = \begin{pmatrix}\frac{1}{2} & 0 \\ 0 & \frac{1}{3}\end{pmatrix}.$$
+   By the $2\times2$ inverse formula
+   $\begin{pmatrix}a&b\\c&d\end{pmatrix}^{-1}
+   =\frac{1}{ad-bc}\begin{pmatrix}d&-b\\-c&a\end{pmatrix}$ for nonzero determinant:
+   $$A^{-1}=\frac{1}{1(1)-1(0)}\begin{pmatrix}1&-1\\0&1\end{pmatrix}
+   =\begin{pmatrix}1 & -1 \\ 0 & 1\end{pmatrix}, \qquad
+   B^{-1}=\frac{1}{2(3)-0(0)}\begin{pmatrix}3&0\\0&2\end{pmatrix}
+   =\begin{pmatrix}\frac{1}{2} & 0 \\ 0 & \frac{1}{3}\end{pmatrix}.$$
    $$B^{-1}A^{-1} = \begin{pmatrix}\frac{1}{2} & 0 \\ 0 & \frac{1}{3}\end{pmatrix}\begin{pmatrix}1 & -1 \\ 0 & 1\end{pmatrix} = \begin{pmatrix}\frac{1}{2}(1) + 0 & \frac{1}{2}(-1) + 0 \\ 0 + \frac{1}{3}(0) & 0 + \frac{1}{3}(1)\end{pmatrix} = \begin{pmatrix}\frac{1}{2} & -\frac{1}{2} \\ 0 & \frac{1}{3}\end{pmatrix}.$$
 
 3. **Comparison and Meaning of Reversed Order:**

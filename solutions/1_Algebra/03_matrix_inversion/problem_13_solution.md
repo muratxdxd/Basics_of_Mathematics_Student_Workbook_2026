@@ -20,17 +20,29 @@ This problem applies foundational mathematical principles:
 
 ## 3. Detailed Step-by-Step Solution
 1. **Method 1: Compute $T$ then $T^{-1}$:**
-   $$T = HS = \begin{pmatrix}1&1\\0&1\end{pmatrix}\begin{pmatrix}2&0\\0&1\end{pmatrix} = \begin{pmatrix}2 & 1 \\ 0 & 1\end{pmatrix}.$$
+   $$T = HS = \begin{pmatrix}1&1\\0&1\end{pmatrix}\begin{pmatrix}2&0\\0&1\end{pmatrix}
+   = \begin{pmatrix}1(2)+1(0)&1(0)+1(1)\\0(2)+0(0)&0(0)+1(1)\end{pmatrix}
+   = \begin{pmatrix}2 & 1 \\ 0 & 1\end{pmatrix}.$$
    $$\det T = 2(1) - 1(0) = 2.$$
+   Using the $2\times2$ inverse formula for nonzero determinant,
+   $\begin{pmatrix}a&b\\c&d\end{pmatrix}^{-1}
+   =\frac{1}{ad-bc}\begin{pmatrix}d&-b\\-c&a\end{pmatrix}$:
    $$T^{-1} = \frac{1}{2}\begin{pmatrix}1 & -1 \\ 0 & 2\end{pmatrix} = \begin{pmatrix}\frac{1}{2} & -\frac{1}{2} \\ 0 & 1\end{pmatrix}.$$
 
 2. **Method 2: Use $(HS)^{-1} = S^{-1}H^{-1}$:**
    $$S^{-1} = \begin{pmatrix}\frac{1}{2} & 0 \\ 0 & 1\end{pmatrix}, \qquad H^{-1} = \begin{pmatrix}1 & -1 \\ 0 & 1\end{pmatrix}.$$
-   $$S^{-1}H^{-1} = \begin{pmatrix}\frac{1}{2} & 0 \\ 0 & 1\end{pmatrix}\begin{pmatrix}1 & -1 \\ 0 & 1\end{pmatrix} = \begin{pmatrix}\frac{1}{2} & -\frac{1}{2} \\ 0 & 1\end{pmatrix}.$$
+   The inverse-of-a-product rule $(XY)^{-1}=Y^{-1}X^{-1}$ follows because
+   $(Y^{-1}X^{-1})(XY)=Y^{-1}(X^{-1}X)Y=I$ and $(XY)(Y^{-1}X^{-1})=I$.
+   Thus $(HS)^{-1}=S^{-1}H^{-1}$, and
+   $$S^{-1}H^{-1} = \begin{pmatrix}\frac{1}{2} & 0 \\ 0 & 1\end{pmatrix}\begin{pmatrix}1 & -1 \\ 0 & 1\end{pmatrix}
+   = \begin{pmatrix}\frac12(1)+0(0)&\frac12(-1)+0(1)\\0(1)+1(0)&0(-1)+1(1)\end{pmatrix}
+   = \begin{pmatrix}\frac{1}{2} & -\frac{1}{2} \\ 0 & 1\end{pmatrix}.$$
    Both methods produce the exact same matrix.
 
 3. **Compute Incorrect Order $H^{-1}S^{-1}$:**
-   $$H^{-1}S^{-1} = \begin{pmatrix}1 & -1 \\ 0 & 1\end{pmatrix}\begin{pmatrix}\frac{1}{2} & 0 \\ 0 & 1\end{pmatrix} = \begin{pmatrix}\frac{1}{2} & -1 \\ 0 & 1\end{pmatrix} \neq T^{-1}.$$
+   $$H^{-1}S^{-1} = \begin{pmatrix}1 & -1 \\ 0 & 1\end{pmatrix}\begin{pmatrix}\frac{1}{2} & 0 \\ 0 & 1\end{pmatrix}
+   = \begin{pmatrix}1(\frac12)+(-1)(0)&1(0)+(-1)(1)\\0(\frac12)+1(0)&0(0)+1(1)\end{pmatrix}
+   = \begin{pmatrix}\frac{1}{2} & -1 \\ 0 & 1\end{pmatrix} \neq T^{-1}.$$
 
 4. **Explanation of the Rule:**
    When transforming an object via $T = HS$, $S$ acts first and $H$ acts second: $y = H(Sx)$. To recover the initial state $x$, one must first undo the last layer applied ($H$) using $H^{-1}$, which leaves $Sx$. Only then can $S$ be undone by applying $S^{-1}$. Applying inverses in the wrong order attempts to undo the earlier transformation before the later one has been removed, distorting the coordinates incorrectly.

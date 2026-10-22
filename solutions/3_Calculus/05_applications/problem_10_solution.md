@@ -22,8 +22,9 @@ This problem applies foundational mathematical principles:
    - Underwater length: $d_w = \sqrt{100^2 + x^2}$.
    - Land length: $d_L = 500 - x$.
    Let the cost per meter on land be $c$, and underwater be $2c$.
-   Total cost (divided by $c$):
+   Define the normalized cost (total cost divided by $c$) as
    $$C(x) = 2\sqrt{10\,000 + x^2} + (500 - x).$$
+   Thus the actual total cost is $cC(x)$.
 
 2. **Domain:**
    The cable emergence point $x$ must lie between the perpendicular crossing and target $B$:
@@ -40,10 +41,11 @@ This problem applies foundational mathematical principles:
 
 ## 4. Verification and Consistency Checks
 4. **Verification of Minimum:**
-   - At critical point $x \approx 57.74\text{ m}$:
-     $$C(57.74) = 2\sqrt{10000 + 3333.33} + (500 - 57.74) = 2(115.47) + 442.26 = 230.94 + 442.26 = 673.2c.$$
+   - At critical point $x \approx 57.74\text{ m}$, the normalized cost is $C(57.74)\approx673.2$, so the actual cost is $cC(57.74)\approx673.2c$.
    - At boundary $x = 0$ (perpendicular water crossing, then all land):
-     $$C(0) = 2(100) + 500 = 700c > 673.2c.$$
+     $$C(0) = 2(100) + 500 = 700,$$
+     so the actual cost $cC(0)=700c$ is greater.
    - At boundary $x = 500$ (direct water diagonal to $B$):
-     $$C(500) = 2\sqrt{100^2 + 500^2} + 0 = 2\sqrt{260\,000} \approx 2(509.90) = 1019.8c > 673.2c.$$
-   The minimum cost is achieved when the cable emerges at $x = \frac{100\sqrt{3}}{3} \approx 57.74\text{ m}$ downstream from the point opposite $A$. (This corresponds to an underwater trajectory angled at $\theta = 30^\circ$ to the river bank, satisfying Snell's Law $\cos\theta = \frac{c_{\text{land}}}{c_{\text{water}}} = \frac{1}{2}$).
+     $$C(500) = 2\sqrt{100^2 + 500^2} \approx 1019.8,$$
+     so the actual cost $cC(500)\approx1019.8c$ is greater.
+   The minimum cost is achieved when the cable emerges at $x = \frac{100\sqrt{3}}{3} \approx 57.74\text{ m}$ downstream from the point opposite $A$. The underwater segment makes a $60^\circ$ angle with the bank (equivalently, $30^\circ$ with the normal to the bank): its adjacent-to-hypotenuse ratio is $x/\sqrt{10000+x^2}=1/2$.

@@ -36,5 +36,45 @@ This problem applies foundational mathematical principles:
    - In the cone equation $x^2 + y^2 = z^2$, the coordinate $z$ is explicitly coupled to the horizontal coordinates. As elevation $|z|$ increases, the right-hand side grows proportionally, forcing the cross-sectional circle to expand linearly with $|z|$.
    - In the cylinder equation $x^2 + y^2 = 4$, the variable $z$ is completely absent (free). The algebraic constraint applies strictly to $x$ and $y$, requiring the exact same circle of radius $2$ at every horizontal slice regardless of $z$.
 
-## 4. Verification and Consistency Checks
+## 4. Sketches
+The $z$-axis is vertical in both schematic drawings. The labeled horizontal traces show representative sections.
+
+1. Double cone: apex $(0,0,0)$ and radius $|z|$; for example, the sections $z=\pm2$ are circles of radius $2$:
+```text
+                         z
+                         ^
+             z=2:   .----|----.       circle R=2
+                   /     |     \
+             z=1:  \   .-|-.   /       circle R=1
+                    \.'  |  '.
+                      \  |  /
+                       \ | /
+                        \|/
+                         O----------------> x
+                        /|\
+                       / | \
+                      /  |  \
+             z=-1:  /   '-'   \        circle R=1
+                   \     |     /
+             z=-2:  '----|----'        circle R=2
+                         v
+```
+
+2. Cylinder: constant radius $2$; each horizontal section is the circle $x^2+y^2=4$, including the representative slices $z=0$ and $z=2$:
+```text
+                         z
+                         ^
+             z=2:   .----|----.       circle R=2
+                   /     |     \
+                  /      |      \
+                 /       |       \
+             z=0:   .----|----.       circle R=2
+                   \     |     /
+                    \    |    /
+                     '---+---'
+                         |
+                         v
+```
+
+## 5. Verification and Consistency Checks
 The analytical derivation is verified through algebraic consistency, dimensional checking, and direct substitution back into the governing problem definitions.

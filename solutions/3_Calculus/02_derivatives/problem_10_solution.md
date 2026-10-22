@@ -21,15 +21,17 @@ This problem applies foundational mathematical principles:
 2. **Compute Derivative and Slope:**
    $$f'(x) = 2x - 3.$$
    $$m = f'(2) = 2(2) - 3 = 4 - 3 = 1.$$
+   The derivative value $f'(2)$ is the slope of the tangent to the graph at $(2,f(2))=(2,-1)$.
 
 3. **Equation of the Tangent Line:**
+   A line through $(x_0,y_0)$ with slope $m$ has point-slope equation $y-y_0=m(x-x_0)$. Using $(x_0,y_0)=(2,-1)$ and $m=f'(2)=1$:
    $$y - y_0 = f'(x_0)(x - x_0) \implies y - (-1) = 1(x - 2) \implies y + 1 = x - 2 \implies y = x - 3.$$
    (In general form: $x - y - 3 = 0$).
 
 ## 4. Verification and Consistency Checks
 4. **Verification:**
    Substitute the tangency point $(2, -1)$ into the tangent equation:
-   $$-1 = 2 - 3 = -1.$$
-   The point of tangency lies on the tangent line.
+   $$y = 2 - 3 = -1,$$
+   which agrees with the point's $y$-coordinate $f(2)=-1$. Thus the line passes through the point of tangency.
 
 ## More Difficult Problems

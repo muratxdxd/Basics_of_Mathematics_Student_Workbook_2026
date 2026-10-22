@@ -20,7 +20,14 @@ This problem applies foundational mathematical principles:
 ## 3. Detailed Step-by-Step Solution
 1. **Method 1: Using $A^{-1}b$:**
    - $\det A = 2(3) - 1(1) = 5$.
-   - $A^{-1} = \frac{1}{5}\begin{pmatrix}3 & -1 \\ -1 & 2\end{pmatrix}$.
+   - For a $2\times2$ matrix $\begin{pmatrix}a&b\\c&d\end{pmatrix}$ with nonzero determinant,
+     $\begin{pmatrix}a&b\\c&d\end{pmatrix}^{-1}
+     =\frac{1}{ad-bc}\begin{pmatrix}d&-b\\-c&a\end{pmatrix}$.
+     Here $a=2,b=1,c=1,d=3$, so
+     $$A^{-1}=\frac{1}{2(3)-1(1)}\begin{pmatrix}3&-1\\-1&2\end{pmatrix}
+     =\frac{1}{5}\begin{pmatrix}3 & -1 \\ -1 & 2\end{pmatrix}.$$
+   - Multiplying $Ax=b$ on the left by $A^{-1}$ yields
+     $A^{-1}(Ax)=(A^{-1}A)x=Ix=x=A^{-1}b$, so this method solves the system.
    - $x = A^{-1}b = \frac{1}{5}\begin{pmatrix}3 & -1 \\ -1 & 2\end{pmatrix}\begin{pmatrix}7 \\ 8\end{pmatrix} = \frac{1}{5}\begin{pmatrix}3(7)-1(8) \\ -1(7)+2(8)\end{pmatrix} = \frac{1}{5}\begin{pmatrix}13 \\ 9\end{pmatrix} = \begin{pmatrix}2.6 \\ 1.8\end{pmatrix}$.
 
 2. **Method 2: Using Gaussian Elimination:**

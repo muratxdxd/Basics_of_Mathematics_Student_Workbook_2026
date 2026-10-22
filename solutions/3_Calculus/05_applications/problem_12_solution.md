@@ -64,15 +64,37 @@ This problem applies foundational mathematical principles:
    - Cost of two perpendicular sides: $2 \times (25\ \mathrm{m} \times 300\ \mathrm{PLN/m}) = 15\,000\ \mathrm{PLN}$.
    - The optimum splits the budget exactly in half ($50\%$ to the parallel side, $50\%$ to the perpendicular sides combined).
 
-7. **Numerical Verification Near the Optimum:**
-   - At $x = 26$: $y = 50 - \frac{130}{6} \approx 28.333\ \mathrm{m} \implies A = 26(28.333) \approx 736.67\ \mathrm{m}^2 < 750$.
-   - At $x = 28$: $y = 50 - \frac{140}{6} \approx 26.667\ \mathrm{m} \implies A = 28(26.667) \approx 746.67\ \mathrm{m}^2 < 750$.
-   - At **$x = 30$**: $y = 25.000\ \mathrm{m} \implies A = 30(25) = \mathbf{750.00\ \mathrm{m}^2}$ (**Global Maximum**).
-   - At $x = 32$: $y = 50 - \frac{160}{6} \approx 23.333\ \mathrm{m} \implies A = 32(23.333) \approx 746.67\ \mathrm{m}^2 < 750$.
-   - At $x = 34$: $y = 50 - \frac{170}{6} \approx 21.667\ \mathrm{m} \implies A = 34(21.667) \approx 736.67\ \mathrm{m}^2 < 750$.
-   The values fall off symmetrically on either side of $x = 30$.
+7. **Objective Graph:**
+   On the domain $0<x<60$, the objective is a downward-opening parabola with excluded endpoint values $A(0)=A(60)=0$ and vertex $(30,750)$:
+   ```text
+   A (m²)
+   ↑
+   750                         ● (30,750)
+   |                       ╭───┴───╮
+   |                    ╭──╯       ╰──╮
+   |                ╭───╯               ╰───╮
+   0 ·············○─────────────────────────○····→ x (m)
+                 0                             60
+              domain endpoints are open
+   ```
 
-8. **Modeling vs. Execution:**
+8. **Computer Verification (not a proof):**
+   After the mathematical analysis, the following reproducible Python calculation evaluates the objective at several points near the optimum:
+   ```python
+   for x in (26, 28, 30, 32, 34):
+       print(x, 50*x - 5*x**2/6)
+   ```
+   Output (area in $\mathrm{m}^2$):
+   ```text
+   26 736.6666666666667
+   28 746.6666666666667
+   30 750.0
+   32 746.6666666666667
+   34 736.6666666666667
+   ```
+   These sampled values are consistent with a maximum at $x=30$; the derivative and concavity argument, not a finite numerical sample, proves global maximality.
+
+9. **Modeling vs. Execution:**
    - **Modeling Phase:** Identifying the variables $x, y$, interpreting the verbal budget constraint ($500x + 600y = 30\,000$), expressing $y$ in terms of $x$, establishing the objective function $A(x) = 50x - \frac{5}{6}x^2$, and recognizing the geometric domain $x \in (0, 60)$. This requires mathematical abstraction and translation.
    - **Execution Phase:** Computing $A'(x)$, setting it to $0$, solving the linear equation $x = 30$, and evaluating $A''(x) = -5/3 < 0$. This is purely algorithmic calculation.
 

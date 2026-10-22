@@ -32,5 +32,19 @@ This problem applies foundational mathematical principles:
 4. **Inflection Point:**
    $$f''(x) = 6x - 6 = 0 \implies x = 1, \qquad f(1) = 1 - 3 + 2 = 0 \implies (1, 0).$$
 
+5. **Sketch:**
+   The curve rises to its local maximum, falls through the inflection point to its local minimum, and then rises again:
+   ```text
+   y
+   ↑
+   2                 ● (0,2)
+   |              ╭──╯ ╲
+   0 ────────────╯───────● (1,0)────────────→ x
+   |                      ╲
+  -2                         ● (2,-2) ╭──
+   |                                     ╰──
+        increasing    decreasing    increasing
+   ```
+
 ## 4. Verification and Consistency Checks
 The analytical derivation is verified through algebraic consistency, dimensional checking, and direct substitution back into the governing problem definitions.

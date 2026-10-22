@@ -32,5 +32,20 @@ This problem applies foundational mathematical principles:
    Since $(x - 2)^2 > 0$ for all $x \in D_f$, $f'(x) < 0$ everywhere on its domain.
    The function is **strictly decreasing on $(-\infty, 2)$** and **strictly decreasing on $(2, \infty)$**. It has no local extrema.
 
+5. **Sketch:**
+   The dashed lines indicate the asymptotes. Each branch decreases; the left branch stays below $y=1$, while the right branch stays above it.
+   ```text
+   y
+   ↑                    x=2
+   |                     ⋮       ╭────
+   1 · · · · · · · · · · ⋮ · · · · · · · · y=1
+   |            ╭───      ⋮   ● (0,-1/2)
+   0 ─────●─────╯─────────⋮────────────────→ x
+       (-1,0)             ⋮
+   |                      ⋮
+   |                      ⋮
+   ```
+   As $x\to2^-$ the left branch falls to $-\infty$; as $x\to2^+$ the right branch descends from $+\infty$ toward the horizontal asymptote.
+
 ## 4. Verification and Consistency Checks
 The analytical derivation is verified through algebraic consistency, dimensional checking, and direct substitution back into the governing problem definitions.

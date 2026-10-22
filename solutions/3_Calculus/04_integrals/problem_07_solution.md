@@ -20,7 +20,7 @@ This problem applies foundational mathematical principles:
    $$u(x)v(x) = \int u'(x)v(x)\,dx + \int u(x)v'(x)\,dx.$$
    Rearranging terms gives the **integration by parts formula**:
    $$\int u(x)v'(x)\,dx = u(x)v(x) - \int u'(x)v(x)\,dx.$$
-   Integration by parts transfers differentiation from one factor ($u$) to the other ($v'$), simplifying integrals where a power of $x$ can be diminished to a constant.
+   In this formula, $v'$ is integrated to obtain $v$, while $u$ is differentiated to obtain $u'$. Thus the derivative transfers from the $v$ factor to the $u$ factor, often simplifying an integral by reducing a power such as $x$ to a constant.
 
 2. **Compute $\int x e^x\,dx$:**
    Choose:

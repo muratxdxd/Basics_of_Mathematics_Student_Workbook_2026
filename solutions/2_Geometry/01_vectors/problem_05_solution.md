@@ -18,7 +18,7 @@ This problem applies foundational mathematical principles:
 ## 3. Detailed Step-by-Step Solution
 1. **Predict Type of Angle from Sign of $u \cdot v$:**
    $$u \cdot v = 1(1) + 1(0) + 0(1) = 1.$$
-   Since $u \cdot v > 0$, $\cos\theta = \frac{u \cdot v}{\|u\|\|v\|} > 0$. Therefore, the angle $\theta$ must be **acute** ($0^\circ \le \theta < 90^\circ$).
+   Since $u \cdot v > 0$, $\cos\theta = \frac{u \cdot v}{\|u\|\|v\|} > 0$, which implies $0^\circ \le \theta < 90^\circ$. The strict acute-angle range is $0^\circ<\theta<90^\circ$; here $u$ and $v$ are not parallel, so $\theta\ne0^\circ$ and the angle is strictly acute.
 
 2. **Compute the Exact Angle:**
    $$\|u\| = \sqrt{1^2 + 1^2 + 0^2} = \sqrt{2}, \qquad \|v\| = \sqrt{1^2 + 0^2 + 1^2} = \sqrt{2}.$$

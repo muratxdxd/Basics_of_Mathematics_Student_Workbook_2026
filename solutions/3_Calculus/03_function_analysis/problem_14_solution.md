@@ -28,6 +28,18 @@ This problem applies foundational mathematical principles:
 
 2. **Qualitative Shape:**
    The function rises from $-\infty$ to a local peak at $x = -2$, drops down to a local valley at $x = 1$, and then rises toward $+\infty$.
+   ```text
+   y
+   ↑
+   |            ● (-2,10/3)
+   |          ╱   ╲
+   |        ╱       ╲
+   0 ─────╱───────────● (0,0)────────────────────→ x
+   |                    ╲
+   |                      ╲       ● (1,-7/6)
+   |                        ╲____╱   then rises
+   ```
+   The peak and valley coordinates shown are for the particular antiderivative $g$ below. For the derivative information alone, the same qualitative shape may be shifted vertically.
 
 3. **Verify $g'(x)$:**
    $$g(x) = \frac{x^3}{3} + \frac{x^2}{2} - 2x.$$
@@ -41,6 +53,7 @@ This problem applies foundational mathematical principles:
      $$g(1) = \frac{1}{3} + \frac{1}{2} - 2 = \frac{5}{6} - 2 = -\frac{7}{6} \approx -1.17.$$
    - Intercept: $g(0) = 0$.
    The concrete graph of $g(x)$ has its peak at $\left(-2, \frac{10}{3}\right)$ and its valley at $\left(1, -\frac{7}{6}\right)$, perfectly validating the qualitative sketch deduced from the derivative.
+   Any other antiderivative of $(x-1)(x+2)$ on $\mathbb R$ differs from $g$ by an additive constant, since two antiderivatives of the same function on an interval differ by a constant. This changes only the vertical position of the graph, not its shape or the $x$-coordinates of its extrema.
 
 ## 4. Verification and Consistency Checks
 The analytical derivation is verified through algebraic consistency, dimensional checking, and direct substitution back into the governing problem definitions.

@@ -19,7 +19,12 @@ This problem applies foundational mathematical principles:
    $$A^{-1}(AX) = A^{-1}B \implies (A^{-1}A)X = A^{-1}B \implies IX = A^{-1}B \implies X = A^{-1}B.$$
 
 2. **Find $A^{-1}$:**
-   $$\det A = 1(1) - 2(0) = 1 \implies A^{-1} = \begin{pmatrix}1 & -2 \\ 0 & 1\end{pmatrix}.$$
+   For a $2\times2$ matrix $\begin{pmatrix}a&b\\c&d\end{pmatrix}$ with $ad-bc\ne0$,
+   $$\begin{pmatrix}a&b\\c&d\end{pmatrix}^{-1}
+   =\frac{1}{ad-bc}\begin{pmatrix}d&-b\\-c&a\end{pmatrix}.$$
+   Here $a=1,b=2,c=0,d=1$, so $\det A=1(1)-2(0)=1$ and
+   $$A^{-1}=\frac{1}{1}\begin{pmatrix}1&-2\\0&1\end{pmatrix}
+   =\begin{pmatrix}1 & -2 \\ 0 & 1\end{pmatrix}.$$
 
 3. **Compute $X = A^{-1}B$:**
    $$X = \begin{pmatrix}1 & -2 \\ 0 & 1\end{pmatrix}\begin{pmatrix}3 & 1 \\ 2 & 4\end{pmatrix} = \begin{pmatrix}1(3) + (-2)(2) & 1(1) + (-2)(4) \\ 0(3) + 1(2) & 0(1) + 1(4)\end{pmatrix} = \begin{pmatrix}3 - 4 & 1 - 8 \\ 2 & 4\end{pmatrix} = \begin{pmatrix}-1 & -7 \\ 2 & 4\end{pmatrix}.$$

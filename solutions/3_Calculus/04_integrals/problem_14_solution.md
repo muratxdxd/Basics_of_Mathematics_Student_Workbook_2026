@@ -16,11 +16,25 @@ This problem applies foundational mathematical principles:
 - Systematic reduction to canonical and solvable forms.
 
 ## 3. Detailed Step-by-Step Solution
-1. **Splitting the Integral:**
+1. **Sketch:**
+   The line segment runs from $(-1,0)$ to $(1,2)$, followed by a horizontal segment through $(3,2)$. The shaded-under-curve regions are represented by the triangle and rectangle.
+   ```text
+   y
+   ↑
+   2             ●──────────────────●
+   |            ╱│  rectangle       │
+   |           ╱ │                  │
+   |          ╱  │                  │
+   0 ────────●───┴──────────────────┴──→ x
+           (-1,0) (1,2)              (3,2)
+              triangle
+   ```
+
+2. **Splitting the Integral:**
    Because the analytical formula changes definition at $x = 1$, the integral must be split at $x = 1$:
    $$\int_{-1}^3 f(x)\,dx = \int_{-1}^1 (x + 1)\,dx + \int_1^3 2\,dx.$$
 
-2. **Calculations:**
+3. **Calculations:**
    - First piece:
      $$\int_{-1}^1 (x + 1)\,dx = \left[\frac{x^2}{2} + x\right]_{-1}^1 = \left(\frac{1}{2} + 1\right) - \left(\frac{(-1)^2}{2} - 1\right) = \frac{3}{2} - \left(-\frac{1}{2}\right) = \frac{3}{2} + \frac{1}{2} = 2.$$
    - Second piece:
@@ -28,7 +42,7 @@ This problem applies foundational mathematical principles:
    - Total integral:
      $$\int_{-1}^3 f(x)\,dx = 2 + 4 = 6.$$
 
-3. **Geometric Verification:**
+4. **Geometric Verification:**
    - For $x \in [-1, 1]$, the function is a straight line rising from $(-1, 0)$ to $(1, 2)$. The region under the curve is a right triangle with base $b = 1 - (-1) = 2$ and height $h = 2$.
      $$\text{Area}_{\text{triangle}} = \frac{1}{2} b h = \frac{1}{2}(2)(2) = 2.$$
    - For $x \in [1, 3]$, the function is horizontal at height $y = 2$. The region is a rectangle with base $b = 3 - 1 = 2$ and height $h = 2$.

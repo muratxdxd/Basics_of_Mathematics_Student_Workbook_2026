@@ -30,5 +30,46 @@ This problem applies foundational mathematical principles:
    - For $z = \pm 2$: $x^2 + y^2 = 3$, circle of radius $R = \sqrt{3} \approx 1.732$.
    - **Qualitative shape:** Two disconnected, separate sheets (an upper bowl for $z \ge 1$ opening upward, and a lower bowl for $z \le -1$ opening downward), separated by an empty gap of height $2$.
 
-## 4. Verification and Consistency Checks
+## 4. Sketches
+The sketches are schematic, with the $z$-axis vertical. Labeled horizontal slices are the calculated circles.
+
+1. One sheet, connected through its waist circle $z=0$, $x^2+y^2=1$ (radius $1$). The slices at $z=\pm1$ have radius $\sqrt2$; at $z=\pm2$, radius $\sqrt5$:
+```text
+                         z
+                         ^
+                 .-------|-------.     z=2:  x^2+y^2=5, R=√5
+               .'        |        '.
+              /          |          \
+              \          |          /
+               '.        |        .'  z=1:  x^2+y^2=2, R=√2
+                 '.___   |   ___.'
+                     '-.( )-'          z=0:  x^2+y^2=1, R=1 (waist)
+                 .---' ( ) '---.
+               .'        |        '.   z=-1: x^2+y^2=2, R=√2
+              /          |          \
+              \          |          /
+               '.        |        .'   z=-2: x^2+y^2=5, R=√5
+                 '-------+-------'
+```
+
+2. Two sheets, separated between $z=-1$ and $z=1$. Each starts at a vertex: $(0,0,\pm1)$; the slices $z=\pm2$ are circles $x^2+y^2=3$ of radius $\sqrt3$:
+```text
+                         z
+                         ^
+                 .-------|-------.     z=2: x^2+y^2=3, R=√3
+               .'        |        '.
+              /          |          \
+               '.___     |     ___.'
+                    '----(*)----'       z=1: vertex (0,0,1)
+                         |
+                         |              no surface for -1<z<1
+                         |
+                    .----(*)----.       z=-1: vertex (0,0,-1)
+               .---'     |     '---.
+              /          |          \
+               '.        |        .'   z=-2: x^2+y^2=3, R=√3
+                 '-------+-------'
+```
+
+## 5. Verification and Consistency Checks
 The analytical derivation is verified through algebraic consistency, dimensional checking, and direct substitution back into the governing problem definitions.

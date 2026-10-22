@@ -34,7 +34,36 @@ This problem applies foundational mathematical principles:
      - For $c < 0$: $y^2 - x^2 = -c = |c|$ (hyperbolas with vertices on the $y$-axis at $(0, \pm\sqrt{|c|}, c)$).
    - **Shape:** A "saddle" (or mountain pass). At $(0,0,0)$, the surface curves up along $x$ and down along $y$.
 
+## 4. Qualitative Sketches
+These perspective sketches are not to scale. The labeled axes indicate the orientation; the cross-sections above guide the shapes.
+
+1. $z=x^2+y^2$: an upward-opening bowl, with upward parabolas in both the $xz$- and $yz$-directions and circular horizontal sections:
+```text
+                    z
+                    ^
+                    |       .-''''-.
+                    |    .-'       '-.
+                    |  .'             '.
+                    | /                 \
+                    O---------------------> x
+                   / \
+                  /   \ y
+```
+
+2. $z=x^2-y^2$: a saddle, curving up along $x$ and down along $y$:
+```text
+                    z
+                    ^
+                .---|---.
+             .-'    |    '-.       rises along x
+          .-'       |       '-.
+     y <---\        O        /-----> x
+            '-.     |     .-'       falls along y
+               '-.__|__.-'
+                    v
+```
+
 ## More Challenging Exercises
 
-## 4. Verification and Consistency Checks
+## 5. Verification and Consistency Checks
 The analytical derivation is verified through algebraic consistency, dimensional checking, and direct substitution back into the governing problem definitions.

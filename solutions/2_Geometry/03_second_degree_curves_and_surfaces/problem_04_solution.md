@@ -25,5 +25,20 @@ This problem applies foundational mathematical principles:
    The points on the parabola are $(3, 6)$ and $(3, -6)$.
    (Notice that the focal width / latus rectum at $x = 3$ is $|6 - (-6)| = 12 = 2p$).
 
-## 4. Verification and Consistency Checks
+## 4. Sketch
+The curve is symmetric about the $x$-axis, has vertex at the origin, and opens smoothly to the right; the requested points are marked:
+```text
+                 y
+                 ^
+       (3,6) *   |         .-'
+              '. |      .-'
+                '.   .-'
+------------------V--------------------> x
+                .'   '-.
+              .' |      '-.
+       (3,-6) *  |         '-.
+               (0,0)
+```
+
+## 5. Verification and Consistency Checks
 The analytical derivation is verified through algebraic consistency, dimensional checking, and direct substitution back into the governing problem definitions.

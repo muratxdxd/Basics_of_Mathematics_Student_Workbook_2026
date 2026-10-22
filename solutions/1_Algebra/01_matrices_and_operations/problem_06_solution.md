@@ -16,6 +16,7 @@ This problem applies foundational mathematical principles:
 
 ## 3. Detailed Step-by-Step Solution
 1. **Transposes:**
+   Transposition turns each row into a column (and each column into a row):
    $$A^T = \begin{pmatrix}1&4\\2&5\\3&6\end{pmatrix}_{3\times 2}, \qquad B^T = \begin{pmatrix}1&2&-1\\0&1&3\end{pmatrix}_{2\times 3}.$$
 
 2. **Product $AB$:**
@@ -26,6 +27,9 @@ This problem applies foundational mathematical principles:
 
 4. **Product $B^T A^T$:**
    $$B^T A^T = \begin{pmatrix}1&2&-1\\0&1&3\end{pmatrix}\begin{pmatrix}1&4\\2&5\\3&6\end{pmatrix} = \begin{pmatrix}1(1)+2(2)-1(3) & 1(4)+2(5)-1(6) \\ 0(1)+1(2)+3(3) & 0(4)+1(5)+3(6)\end{pmatrix} = \begin{pmatrix}2 & 8 \\ 11 & 23\end{pmatrix}.$$
+   Transposing a product reverses the factor order. Entrywise,
+   $$(B^T A^T)_{ij}=\sum_k B_{ki}A_{jk}=(AB)_{ji}=((AB)^T)_{ij},$$
+   so the corresponding entries agree.
 
 ## 4. Verification and Consistency Checks
 $(AB)^T = \begin{pmatrix}2&8\\11&23\end{pmatrix} = B^T A^T$. The property $(AB)^T = B^T A^T$ holds.

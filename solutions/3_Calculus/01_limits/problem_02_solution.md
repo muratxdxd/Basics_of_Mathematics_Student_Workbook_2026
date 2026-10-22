@@ -26,7 +26,7 @@ This problem applies foundational mathematical principles:
    Let $p = \deg(P)$ and $q = \deg(Q)$:
    - If $p < q$ (denominator grows faster), the limit is always **$0$**.
    - If $p = q$ (numerator and denominator grow at the same rate), the limit is the finite non-zero ratio of leading coefficients $\frac{a_p}{b_q}$.
-   - If $p > q$ (numerator grows faster), the sequence diverges to **$\pm\infty$** (or does not exist if sign oscillates).
+   - If $p > q$ (numerator grows faster), the limit is **$+\infty$** when $\frac{a_p}{b_q}>0$ and **$-\infty$** when $\frac{a_p}{b_q}<0$. Since $n\to+\infty$ and the leading coefficients are fixed, the ratio has an eventually constant sign; it does not oscillate.
 
 ## 4. Verification and Consistency Checks
 The analytical derivation is verified through algebraic consistency, dimensional checking, and direct substitution back into the governing problem definitions.

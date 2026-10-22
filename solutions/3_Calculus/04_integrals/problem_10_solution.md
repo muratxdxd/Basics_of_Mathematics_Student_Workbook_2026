@@ -29,7 +29,10 @@ This problem applies foundational mathematical principles:
 
 3. **Comparison and Error Detection:**
    - The exact value $4.667$ lies within the estimated range $[2, 10]$.
-   - **Errors detected by bounding checks:** Such checks instantly catch catastrophic mistakes like incorrect antiderivative powers (e.g. integrating $x^2 \to x^3$ without dividing by 3, yielding $10$), sign errors in the Fundamental Theorem of Calculus ($F(a) - F(b)$ instead of $F(b) - F(a)$, yielding negative numbers for a positive function), or arithmetic slips that produce values outside the geometrically allowable bounds.
+   - The displayed estimate is a weak bound because it uses only the minimum and maximum of the integrand. Since $1<x^2+1<5$ for every interior point $0<x<2$, continuity and strict inequality on the interior give the sharper conclusion
+     $$2<\int_0^2(x^2+1)\,dx<10.$$
+     In particular, the value $10$ is excluded; it would result from the mistake of using $x^3$ instead of $x^3/3$ as an antiderivative of $x^2$.
+   - A result inside these bounds is merely **consistent** with the estimate, not thereby proved correct. A result outside the bounds exposes an error; comparison with the exact value or an additional check is needed to detect errors that still fall inside.
 
 ## More Difficult Problems
 

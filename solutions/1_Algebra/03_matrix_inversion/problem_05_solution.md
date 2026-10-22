@@ -16,6 +16,7 @@ This problem applies foundational mathematical principles:
 ## 3. Detailed Step-by-Step Solution
 1. **Set up the Augmented Matrix:**
    $$[A \mid I] = \left[\begin{array}{ccc|ccc} 1&1&0 & 1&0&0 \\ 0&1&1 & 0&1&0 \\ 1&0&1 & 0&0&1 \end{array}\right].$$
+   Each elementary row operation is left multiplication by an elementary matrix, so applying the same operation to both blocks is precisely multiplying both $A$ and $I$ on the left. If the product of these elementary matrices is $E$, the final left block is $EA=I$, hence $E=A^{-1}$. The right block is $EI=A^{-1}$, which is why the row operations produce the inverse.
 
 2. **Forward Elimination:**
    - $R_3 \leftarrow R_3 - R_1$:
@@ -37,3 +38,4 @@ This problem applies foundational mathematical principles:
 ## 4. Verification and Consistency Checks
 5. **Verification via $AA^{-1}$:**
    $$AA^{-1} = \begin{pmatrix}1&1&0\\0&1&1\\1&0&1\end{pmatrix} \cdot \frac{1}{2}\begin{pmatrix}1&-1&1\\1&1&-1\\-1&1&1\end{pmatrix} = \frac{1}{2}\begin{pmatrix}1+1+0 & -1+1+0 & 1-1+0 \\ 0+1-1 & 0+1+1 & 0-1+1 \\ 1+0-1 & -1+0+1 & 1+0+1\end{pmatrix} = \frac{1}{2}\begin{pmatrix}2&0&0\\0&2&0\\0&0&2\end{pmatrix} = I.$$
+   This product check confirms that the computed matrix is a right inverse; for a square matrix, this verifies it is the inverse of $A$.

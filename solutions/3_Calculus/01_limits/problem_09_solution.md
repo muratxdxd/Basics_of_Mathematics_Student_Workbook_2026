@@ -29,5 +29,17 @@ This problem applies foundational mathematical principles:
    The line $x = 2$ is a **vertical asymptote**.
    On a graph, as the curve approaches $x = 2$ from the left, it plunges steeply downwards toward $-\infty$. As it approaches from the right, it shoots steeply upwards toward $+\infty$, forming the characteristic opposing branches of a hyperbola.
 
+   ```text
+                           y
+                           ↑                    ┆ x = 2
+                           │                    ┆╲
+                           │                    ┆ ╲____
+   ←───────────────────────┼────────────────────┆────────→ x
+         ______            │                    ┆
+               ╲___________│___________________↙
+                           │                    ┆
+   ```
+   The horizontal axis is $y=0$: both branches approach it far from $x=2$ (from below on the left and above on the right). The dashed vertical guide marks the asymptote.
+
 ## 4. Verification and Consistency Checks
 The analytical derivation is verified through algebraic consistency, dimensional checking, and direct substitution back into the governing problem definitions.

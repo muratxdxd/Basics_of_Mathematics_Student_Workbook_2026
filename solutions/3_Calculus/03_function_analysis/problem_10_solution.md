@@ -45,6 +45,20 @@ This problem applies foundational mathematical principles:
    - Convex on $(-\sqrt{3}, 0)$ and $(\sqrt{3}, \infty)$.
    Inflection coordinates: $\left(-\sqrt{3}, -\frac{\sqrt{3}}{4}\right)$, $(0, 0)$, and $\left(\sqrt{3}, \frac{\sqrt{3}}{4}\right)$.
 
+7. **Qualitative Sketch:**
+   The graph is odd (origin-symmetric), approaches the horizontal asymptote $y=0$ at both ends, and has the inflection points in the order $-\sqrt3,0,\sqrt3$.
+   ```text
+   y
+   ↑                         ● (1,1/2) maximum
+   |                     ╭───╯ ╲
+   |                ╭────╯      • (√3,√3/4) inflection
+   0 · · · · · · · ● · · · · · · · · · · · ·→ x   y=0 asymptote
+   |  • (-√3,-√3/4) ╲
+   |                  ╲────╮
+   |        ● (-1,-1/2) minimum
+   ```
+   From left to right the key $x$-coordinates are $-\sqrt3,-1,0,1,\sqrt3$: inflection, minimum, inflection at the origin, maximum, inflection. The left-hand branch is the rotation of the right-hand branch by $180^\circ$ about the origin.
+
 ## More Difficult Problems
 
 ## 4. Verification and Consistency Checks
