@@ -36,3 +36,11 @@ If you use AI tools to help prepare your solution, make sure that the final answ
 4. **Verification and Consistency Checks**
 
 The final solution should be complete, understandable, and written in a form that clearly demonstrates the reasoning used to solve the problem.
+
+### Presenting the solutions
+
+The standalone [solutions presentation](./solutions-presentation.html) contains all 180 worked solutions. Use the navigation and search to choose a problem, then use **Present** or the arrow keys to navigate during class. The Limits Problem 1 page also includes an interactive sequence visualization.
+
+When GitHub Pages is enabled for this repository, the presentation is available at:
+
+<https://muratxdxd.github.io/Basics_of_Mathematics_Student_Workbook_2026/>
