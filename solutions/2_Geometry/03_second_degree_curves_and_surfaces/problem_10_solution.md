@@ -1,4 +1,4 @@
-﻿# Problem 10: Paraboloids
+# Problem 10: Paraboloids
 
 ## 1. Problem Statement
 Compare
@@ -34,33 +34,53 @@ This problem applies foundational mathematical principles:
      - For $c < 0$: $y^2 - x^2 = -c = |c|$ (hyperbolas with vertices on the $y$-axis at $(0, \pm\sqrt{|c|}, c)$).
    - **Shape:** A "saddle" (or mountain pass). At $(0,0,0)$, the surface curves up along $x$ and down along $y$.
 
-## 4. Qualitative Sketches
-These perspective sketches are not to scale. The labeled axes indicate the orientation; the cross-sections above guide the shapes.
+## 4. Qualitative Sketches and Coordinate Traces
 
-1. $z=x^2+y^2$: an upward-opening bowl, with upward parabolas in both the $xz$- and $yz$-directions and circular horizontal sections:
+1. **Surface 1: $z = x^2 + y^2$ (Elliptic Paraboloid — Upward-Opening Bowl):**
+   The minimum is at the origin $O(0,0,0)$, and the surface opens upward into $z \ge 0$. Every vertical coordinate section ($z=x^2$ for $y=0$, and $z=y^2$ for $x=0$) is an upward parabola opening from $O$, and horizontal sections $z=c > 0$ are circles of radius $\sqrt{c}$:
+
 ```text
-                    z
-                    ^
-                    |       .-''''-.
-                    |    .-'       '-.
-                    |  .'             '.
-                    | /                 \
-                    O---------------------> x
-                   / \
-                  /   \ y
+       Perspective View:                         Coordinate Section (y=0 or x=0):
+              z                                           z
+              ^     z=c: circular rim                     ^
+              |        .-------.                          |   z = x²  (or z = y²)
+          \   |   /  .'         '.                    \   |   /
+           \  |  /  (             )                    \  |  /  upward parabola
+            \ | /    '.         .'                      \ | /   minimum at O
+             \|/       '-------'                         \|/
+              O-------------------> x                     O--------------> x (or y)
+             /                                      minimum (0,0,0)
+            v y
+       minimum at origin (0,0,0)
 ```
 
-2. $z=x^2-y^2$: a saddle, curving up along $x$ and down along $y$:
+2. **Surface 2: $z = x^2 - y^2$ (Hyperbolic Paraboloid — Saddle Surface):**
+   The origin $O(0,0,0)$ is a saddle point. The two coordinate traces through $O$ demonstrate the opposing curvatures:
+   - **Along the $x$-axis ($y = 0$, $xz$-plane):** $z = x^2$, an **upward-opening parabola** (curves upward with minimum at $O$).
+   - **Along the $y$-axis ($x = 0$, $yz$-plane):** $z = -y^2$, a **downward-opening parabola** (curves downward with maximum at $O$).
+
 ```text
-                    z
-                    ^
-                .---|---.
-             .-'    |    '-.       rises along x
-          .-'       |       '-.
-     y <---\        O        /-----> x
-            '-.     |     .-'       falls along y
-               '-.__|__.-'
-                    v
+   Trace in y=0 (xz-plane):                Trace in x=0 (yz-plane):
+              z                                           z
+              ^                                           ^
+              |   z = x² (upward)                         |   maximum at O
+          \   |   /                                       O--------------> y
+           \  |  /   minimum at O                        /|\
+            \ | /                                       / | \   z = -y² (downward)
+             \|/                                       /  |  \
+              O--------------> x                      /   v   \
+
+   Combined 3D Perspective (Saddle):
+              z
+              ^          upward trace z = x² (along x)
+          \   |   /      . - '
+           \  |  /   . - '
+            \ | /.-'
+             \|O'-------------------> x
+            .'|\
+        .-'   | \  downward trace z = -y² (along y)
+    .-'       |  \
+   v y        v
 ```
 
 ## More Challenging Exercises

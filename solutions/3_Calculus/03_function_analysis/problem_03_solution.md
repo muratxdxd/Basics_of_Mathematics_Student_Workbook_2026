@@ -1,4 +1,4 @@
-﻿# Problem 3: A Rational Function
+# Problem 3: A Rational Function
 
 ## 1. Problem Statement
 Analyze the domain, zeros, asymptotes, and monotonicity of
@@ -33,17 +33,23 @@ This problem applies foundational mathematical principles:
    The function is **strictly decreasing on $(-\infty, 2)$** and **strictly decreasing on $(2, \infty)$**. It has no local extrema.
 
 5. **Sketch:**
-   The dashed lines indicate the asymptotes. Each branch decreases; the left branch stays below $y=1$, while the right branch stays above it.
+   Both branches are strictly decreasing. The left branch starts near $y=1$ as $x \to -\infty$, passes through $(-1,0)$ and the $y$-intercept $(0,-1/2)$ on the $y$-axis below $y=0$, and falls to $-\infty$ as $x \to 2^-$. The right branch descends from $+\infty$ near $x=2^+$ toward the horizontal asymptote $y=1$ from above:
    ```text
    y
-   ↑                    x=2
-   |                     ⋮       ╭────
-   1 · · · · · · · · · · ⋮ · · · · · · · · y=1
-   |            ╭───      ⋮   ● (0,-1/2)
-   0 ─────●─────╯─────────⋮────────────────→ x
-       (-1,0)             ⋮
-   |                      ⋮
-   |                      ⋮
+   ^                                   : x = 2 (vertical asymptote)
+   |                                   :   |
+   |                                   :   |   right branch descends
+   |                                   :    \  from +inf
+   1 - - - - - - - - - - - - - - - - - : - - \ - - - - - - - > y = 1 (horizontal asymptote)
+   |      left branch                  :      \______
+   0 ---------*------------------------:---------------------> x
+   |       (-1,0)   \                  :
+   |                 * (0,-1/2)        :
+   |                  \                :
+   |                   \               :   left branch
+   |                    \              :   falls to -inf
+   |                     |             :   as x -> 2-
+   |                     v             :
    ```
    As $x\to2^-$ the left branch falls to $-\infty$; as $x\to2^+$ the right branch descends from $+\infty$ toward the horizontal asymptote.
 

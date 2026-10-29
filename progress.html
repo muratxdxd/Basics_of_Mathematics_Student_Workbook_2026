@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>Workbook Progress</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #182230;
+      --muted: #657386;
+      --line: #e1e7ef;
+      --paper: #fff;
+      --canvas: #f5f7fb;
+      --blue: #315fe8;
+      --blue-soft: #edf2ff;
+      --green: #18794e;
+      --green-soft: #e8f6ef;
+      --amber: #8b5b08;
+      --amber-soft: #fff4d9;
+      --shadow: 0 12px 34px rgba(27, 45, 75, .07);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--canvas);
+      color: var(--ink);
+      font: 15px/1.55 "Segoe UI", system-ui, -apple-system, sans-serif;
+    }
+
+    a { color: inherit; }
+
+    .wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 48px 0 64px;
+    }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(32px, 5vw, 48px);
+      letter-spacing: -.045em;
+      line-height: 1.08;
+    }
+
+    .intro {
+      max-width: 660px;
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: 1.5fr repeat(2, 1fr);
+      gap: 14px;
+      margin: 30px 0 18px;
+    }
+
+    .metric, .panel, .section-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .metric { min-height: 126px; padding: 20px; }
+
+    .metric-main {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .metric-label {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .metric-value {
+      display: block;
+      margin-top: 5px;
+      font-size: 29px;
+      font-weight: 800;
+      letter-spacing: -.04em;
+      line-height: 1.2;
+    }
+
+    .metric-note { margin: 8px 0 0; color: var(--muted); font-size: 12px; }
+
+    .ring {
+      display: grid;
+      width: 62px;
+      height: 62px;
+      flex: 0 0 auto;
+      place-items: center;
+      border-radius: 50%;
+      background: conic-gradient(var(--blue) var(--progress), #e8edf5 0);
+    }
+
+    .ring span {
+      display: grid;
+      width: 48px;
+      height: 48px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--paper);
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .review-panel {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      margin: 0 0 34px;
+      padding: 19px 21px;
+    }
+
+    .review-panel h2 { margin: 0; font-size: 16px; }
+    .review-panel p { margin: 5px 0 0; color: var(--muted); }
+    .review-badge {
+      flex: 0 0 auto;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: var(--amber-soft);
+      color: var(--amber);
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .review-link { color: var(--blue); text-decoration: none; }
+    .review-link:hover { text-decoration: underline; }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    .section-heading h2 { margin: 0; font-size: 22px; letter-spacing: -.02em; }
+    .section-heading p { margin: 5px 0 0; color: var(--muted); }
+
+    .filters {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .filters input {
+      width: min(100%, 340px);
+      min-height: 42px;
+      padding: 0 13px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--paper);
+      color: var(--ink);
+      font: inherit;
+    }
+
+    .filters input:focus-visible, a:focus-visible {
+      outline: 3px solid rgba(49, 95, 232, .35);
+      outline-offset: 2px;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .section-card { padding: 19px; }
+
+    .card-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .card-head h3 {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.35;
+    }
+
+    .card-head p { margin: 5px 0 0; color: var(--muted); font-size: 12px; }
+
+    .written-badge {
+      flex: 0 0 auto;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: var(--green-soft);
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .bar {
+      height: 7px;
+      margin: 15px 0 13px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #edf0f5;
+    }
+
+    .bar span {
+      display: block;
+      height: 100%;
+      border-radius: inherit;
+      background: var(--blue);
+    }
+
+    .problem-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+
+    .problem-link {
+      display: grid;
+      width: 34px;
+      height: 32px;
+      place-items: center;
+      border: 1px solid #cfe9da;
+      border-radius: 8px;
+      background: #f2fbf6;
+      color: var(--green);
+      font-size: 12px;
+      font-weight: 750;
+      text-decoration: none;
+      transition: transform .15s ease, background .15s ease;
+    }
+
+    .problem-link:hover { transform: translateY(-2px); background: var(--green-soft); }
+
+    .empty {
+      grid-column: 1 / -1;
+      padding: 25px;
+      border: 1px dashed #b9c4d3;
+      border-radius: 14px;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .footnote {
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      margin-top: 28px;
+      padding-top: 17px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @media (max-width: 720px) {
+      .wrap { width: min(100% - 28px, 560px); padding-top: 32px; }
+      .summary { grid-template-columns: 1fr 1fr; }
+      .summary .metric:first-child { grid-column: 1 / -1; }
+      .section-grid { grid-template-columns: 1fr; }
+      .review-panel { flex-direction: column; }
+      .section-heading { align-items: flex-start; flex-direction: column; }
+      .filters input { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <p class="eyebrow">Student Workbook · Winter 2026</p>
+      <h1>Your progress</h1>
+      <p class="intro">A local snapshot of the solution files in this workbook, organized by subject and section.</p>
+    </header>
+
+    <section class="summary" aria-label="Workbook summary">
+      <article class="metric">
+        <div class="metric-main">
+          <div>
+            <span class="metric-label">Solutions with content</span>
+            <strong class="metric-value" id="overall-count">—</strong>
+            <p class="metric-note">Based on solution files present in this repository snapshot</p>
+          </div>
+          <div class="ring" id="overall-ring" role="img" aria-label="Overall file completion">
+            <span id="overall-percent">—</span>
+          </div>
+        </div>
+      </article>
+      <article class="metric">
+        <span class="metric-label">Sections</span>
+        <strong class="metric-value" id="section-count">—</strong>
+        <p class="metric-note">Across Algebra, Geometry, and Calculus</p>
+      </article>
+      <article class="metric">
+        <span class="metric-label">Exercises</span>
+        <strong class="metric-value" id="exercise-count">—</strong>
+        <p class="metric-note">Numbered solution files in the workbook</p>
+      </article>
+    </section>
+
+    <section class="panel review-panel" aria-labelledby="review-title">
+      <div>
+        <h2 id="review-title">GitHub review status</h2>
+        <p><strong>44 solution files</strong> were updated to address review feedback and pushed. The 12 review issues are still open, so reviewer follow-up is pending. <a class="review-link" href="https://github.com/muratxdxd/Basics_of_Mathematics_Student_Workbook_2026/issues">View issues</a></p>
+      </div>
+      <span class="review-badge">Review pending</span>
+    </section>
+
+    <section aria-labelledby="sections-title">
+      <div class="section-heading">
+        <div>
+          <h2 id="sections-title">Progress by section</h2>
+          <p>Each number links to its solution Markdown file.</p>
+        </div>
+      </div>
+      <div class="filters">
+        <label for="section-search" class="eyebrow" style="margin:0; white-space:nowrap">Find a section</label>
+        <input id="section-search" type="search" placeholder="Search Algebra, vectors, integrals…" autocomplete="off">
+      </div>
+      <div class="section-grid" id="section-grid" aria-live="polite"></div>
+    </section>
+
+    <p class="footnote">“With content” means a solution file is non-empty; it does not verify mathematical correctness, instructor approval, or grades. This dashboard is a static snapshot and will not update automatically when files change.</p>
+    <footer class="meta">
+      <span>Last reviewed snapshot: October 22, 2026</span>
+      <span>Latest workbook commit: d0e7f7a</span>
+      <span>Saved as <strong>progress.html</strong> in the repository root</span>
+    </footer>
+  </main>
+
+  <script>
+    const sections = [
+      { group: "Algebra", name: "Matrices and Operations", path: "1_Algebra/01_matrices_and_operations", count: 15 },
+      { group: "Algebra", name: "Determinants", path: "1_Algebra/02_determinants", count: 15 },
+      { group: "Algebra", name: "Matrix Inversion", path: "1_Algebra/03_matrix_inversion", count: 15 },
+      { group: "Algebra", name: "Systems of Equations", path: "1_Algebra/04_systems_of_equations", count: 15 },
+      { group: "Geometry", name: "Vectors", path: "2_Geometry/01_vectors", count: 15 },
+      { group: "Geometry", name: "Lines and Planes", path: "2_Geometry/02_lines_and_planes", count: 15 },
+      { group: "Geometry", name: "Second-Degree Curves and Surfaces", path: "2_Geometry/03_second_degree_curves_and_surfaces", count: 15 },
+      { group: "Calculus", name: "Limits", path: "3_Calculus/01_limits", count: 15 },
+      { group: "Calculus", name: "Derivatives", path: "3_Calculus/02_derivatives", count: 15 },
+      { group: "Calculus", name: "Function Analysis", path: "3_Calculus/03_function_analysis", count: 15 },
+      { group: "Calculus", name: "Integrals", path: "3_Calculus/04_integrals", count: 15 },
+      { group: "Calculus", name: "Applications", path: "3_Calculus/05_applications", count: 15 }
+    ].map(section => ({ ...section, written: section.count }));
+
+    const total = sections.reduce((sum, section) => sum + section.count, 0);
+    const written = sections.reduce((sum, section) => sum + section.written, 0);
+    const percent = total ? Math.round((written / total) * 100) : 0;
+
+    document.getElementById("overall-count").textContent = `${written} / ${total}`;
+    document.getElementById("overall-percent").textContent = `${percent}%`;
+    document.getElementById("overall-ring").style.setProperty("--progress", `${percent}%`);
+    document.getElementById("section-count").textContent = sections.length;
+    document.getElementById("exercise-count").textContent = total;
+
+    const grid = document.getElementById("section-grid");
+    const search = document.getElementById("section-search");
+
+    function renderSections(query = "") {
+      const normalizedQuery = query.trim().toLowerCase();
+      const visible = sections.filter(section =>
+        `${section.group} ${section.name}`.toLowerCase().includes(normalizedQuery)
+      );
+
+      if (!visible.length) {
+        grid.innerHTML = '<div class="empty">No sections match that search.</div>';
+        return;
+      }
+
+      grid.innerHTML = visible.map(section => {
+        const progress = section.count ? Math.round((section.written / section.count) * 100) : 0;
+        const links = Array.from({ length: section.count }, (_, index) => {
+          const number = String(index + 1).padStart(2, "0");
+          const status = index < section.written ? "Solution file has content" : "Solution file is empty";
+          return `<a class="problem-link" href="solutions/${section.path}/problem_${number}_solution.md" aria-label="${section.name}, problem ${index + 1}: ${status}" title="${status}">${number}</a>`;
+        }).join("");
+
+        return `<article class="section-card">
+          <div class="card-head">
+            <div>
+              <h3>${section.name}</h3>
+              <p>${section.group} · ${section.written} of ${section.count} solution files with content</p>
+            </div>
+            <span class="written-badge">${progress}%</span>
+          </div>
+          <div class="bar" role="progressbar" aria-label="${section.name} file completion" aria-valuenow="${section.written}" aria-valuemin="0" aria-valuemax="${section.count}">
+            <span style="width:${progress}%"></span>
+          </div>
+          <div class="problem-list">${links}</div>
+        </article>`;
+      }).join("");
+    }
+
+    search.addEventListener("input", event => renderSections(event.target.value));
+    renderSections();
+  </script>
+</body>
+</html>

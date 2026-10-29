@@ -1,4 +1,4 @@
-﻿# Problem 4: Parabola
+# Problem 4: Parabola
 
 ## 1. Problem Statement
 For
@@ -26,17 +26,19 @@ This problem applies foundational mathematical principles:
    (Notice that the focal width / latus rectum at $x = 3$ is $|6 - (-6)| = 12 = 2p$).
 
 ## 4. Sketch
-The curve is symmetric about the $x$-axis, has vertex at the origin, and opens smoothly to the right; the requested points are marked:
+The curve lies entirely in the right half-plane ($x \ge 0$), has its vertex at the origin $(0,0)$, and opens symmetrically to the right through the points $(3,6)$ and $(3,-6)$, with no points in $x < 0$:
 ```text
                  y
                  ^
-       (3,6) *   |         .-'
-              '. |      .-'
-                '.   .-'
-------------------V--------------------> x
-                .'   '-.
-              .' |      '-.
-       (3,-6) *  |         '-.
+                 |                 * (3,6)
+                 |             . - '
+                 |         . - '
+                 |     . - '
+  x < 0 (empty)  V · · · · · · · · · · · · · > x
+                 |     ' - .
+                 |         ' - .
+                 |             ' - .
+                 |                 * (3,-6)
                (0,0)
 ```
 

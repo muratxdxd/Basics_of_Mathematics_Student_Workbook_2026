@@ -1,4 +1,4 @@
-﻿# Problem 10: Complete Function Analysis
+# Problem 10: Complete Function Analysis
 
 ## 1. Problem Statement
 Perform a complete analysis of
@@ -46,18 +46,24 @@ This problem applies foundational mathematical principles:
    Inflection coordinates: $\left(-\sqrt{3}, -\frac{\sqrt{3}}{4}\right)$, $(0, 0)$, and $\left(\sqrt{3}, \frac{\sqrt{3}}{4}\right)$.
 
 7. **Qualitative Sketch:**
-   The graph is odd (origin-symmetric), approaches the horizontal asymptote $y=0$ at both ends, and has the inflection points in the order $-\sqrt3,0,\sqrt3$.
+   The graph is odd (origin-symmetric) and consists of two connected parts meeting at $(0,0)$:
+   - The negative part lies entirely in $x < 0$: it approaches $y=0$ as $x \to -\infty$, passes inflection point $(-\sqrt{3}, -\sqrt{3}/4)$, reaches its global minimum at $(-1, -1/2)$, and rises strictly within $x < 0$ to the origin $(0,0)$.
+   - The positive part lies entirely in $x > 0$: it rises from $(0,0)$ to its global maximum at $(1, 1/2)$, passes inflection point $(\sqrt{3}, \sqrt{3}/4)$, and decreases asymptotically toward $y=0$ as $x \to +\infty$.
+
    ```text
    y
-   ↑                         ● (1,1/2) maximum
-   |                     ╭───╯ ╲
-   |                ╭────╯      • (√3,√3/4) inflection
-   0 · · · · · · · ● · · · · · · · · · · · ·→ x   y=0 asymptote
-   |  • (-√3,-√3/4) ╲
-   |                  ╲────╮
-   |        ● (-1,-1/2) minimum
+   ^                                  * (1, 1/2) max
+   |                               . - ' \
+   |                             . '      • (√3, √3/4) inflection
+   |                           . '          \______  approaches y=0
+   0 - - - - - - - - - - - - - * (0,0) - - - - - - - - - - - - - - > x  (y=0 asymptote)
+   |                 ______/   :
+   |      • (-√3, -√3/4)      :   [entire negative part in x < 0]
+   |        \   . '           :   [entire positive part in x > 0]
+   |          * (-1, -1/2) min:
+   |          (global min)    :
    ```
-   From left to right the key $x$-coordinates are $-\sqrt3,-1,0,1,\sqrt3$: inflection, minimum, inflection at the origin, maximum, inflection. The left-hand branch is the rotation of the right-hand branch by $180^\circ$ about the origin.
+   The key $x$-coordinates appear in exact horizontal order: $-\sqrt{3} < -1 < 0 < 1 < \sqrt{3}$ (inflection, minimum, central inflection, maximum, inflection).
 
 ## More Difficult Problems
 

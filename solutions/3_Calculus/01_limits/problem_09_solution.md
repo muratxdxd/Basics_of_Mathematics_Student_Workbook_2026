@@ -1,4 +1,4 @@
-﻿# Problem 9: One-Sided Limits and an Asymptote
+# Problem 9: One-Sided Limits and an Asymptote
 
 ## 1. Problem Statement
 Analyze the left-hand and right-hand limits of
@@ -27,17 +27,25 @@ This problem applies foundational mathematical principles:
 
 3. **Geometric Interpretation and Asymptote:**
    The line $x = 2$ is a **vertical asymptote**.
-   On a graph, as the curve approaches $x = 2$ from the left, it plunges steeply downwards toward $-\infty$. As it approaches from the right, it shoots steeply upwards toward $+\infty$, forming the characteristic opposing branches of a hyperbola.
+   - As $x \to 2^-$, the curve stays below the $x$-axis and plunges vertically downward toward $-\infty$ directly along the left side of the asymptote $x = 2$. Far to the left ($x \to -\infty$), it approaches $y = 0$ from below.
+   - As $x \to 2^+$, the curve stays above the $x$-axis and shoots vertically upward toward $+\infty$ directly along the right side of $x = 2$. Far to the right ($x \to +\infty$), it approaches $y = 0$ from above.
 
    ```text
                            y
-                           ↑                    ┆ x = 2
-                           │                    ┆╲
-                           │                    ┆ ╲____
-   ←───────────────────────┼────────────────────┆────────→ x
-         ______            │                    ┆
-               ╲___________│___________________↙
-                           │                    ┆
+                           ^                     : x = 2 (vertical asymptote)
+                           |                     :  |
+                           |                     :  |
+                           |                     :  |   right branch
+                           |                     :   \  approaches +inf as x->2+
+                           |                     :    \______  approaches y=0
+   <-----------------------+---------------------:--------------------> x
+               ______      |                     :
+      approaches y=0 \     |                     :
+                      \    |                     :
+                       \   |   left branch       :  |
+                        \  |   approaches -inf   :  |
+                         \ |   as x->2-          :  |
+                          \|                     :  v  descends to -inf
    ```
    The horizontal axis is $y=0$: both branches approach it far from $x=2$ (from below on the left and above on the right). The dashed vertical guide marks the asymptote.
 

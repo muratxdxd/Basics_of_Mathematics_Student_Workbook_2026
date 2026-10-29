@@ -1,4 +1,4 @@
-﻿# Problem 14: Cone and Cylinder
+# Problem 14: Cone and Cylinder
 
 ## 1. Problem Statement
 Compare
@@ -60,18 +60,19 @@ The $z$-axis is vertical in both schematic drawings. The labeled horizontal trac
                          v
 ```
 
-2. Cylinder: constant radius $2$; each horizontal section is the circle $x^2+y^2=4$, including the representative slices $z=0$ and $z=2$:
+2. Cylinder $x^2+y^2=4$: constant radius $R=2$ at all heights; straight generators parallel to the vertical $z$-axis, with equal-width horizontal circular cross-sections:
 ```text
                          z
                          ^
              z=2:   .----|----.       circle R=2
-                   /     |     \
-                  /      |      \
-                 /       |       \
-             z=0:   .----|----.       circle R=2
-                   \     |     /
-                    \    |    /
-                     '---+---'
+                    |    |    |
+                    |    |    |       straight vertical generators
+                    |    |    |       parallel to z-axis (radius = 2)
+             z=0:   |----O----|       circle R=2  (at z=0)
+                    |    |    |
+                    |    |    |
+                    |    |    |
+             z=-2:  '----|----'       circle R=2
                          |
                          v
 ```

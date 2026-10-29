@@ -1,4 +1,4 @@
-﻿# Problem 15: Observation Versus Proof
+# Problem 15: Observation Versus Proof
 
 ## 1. Problem Statement
 Choose one sequence and one function from this set. For the sequence, compute several values for increasingly large $n$. For the function, prepare a table of values with arguments approaching the limit point from the left and right. Sketch the behavior of both objects.
@@ -46,15 +46,17 @@ This problem applies foundational mathematical principles:
 
    ```text
     y
-    ↑
-    │                 ○ (3, 2)
-    │               ╱
-    │             ╱       y = x - 1, except at x = 3
-    │           ╱
-    ┼─────────╱────────────────────→ x
-    │       ╱
+    ^                         /
+    |                       /
+    |                     /   line continues beyond (3,2)
+    |                 o (3, 2) [hole / excluded point]
+    |               /
+    |             /       y = x - 1, defined for all x != 3
+    |           /
+    +---------/------------------------> x
+    |       /
    ```
-   The open circle marks the missing point: the graph follows the line on both sides but has no value at $x=3$.
+   The open circle marks the missing point: the function is identical to the line $y = x - 1$ on both sides of $x=3$, approaching $(3, 2)$ from the left and right and continuing smoothly beyond it.
 
    **Comparison with Exercises 1 and 7:** As in Exercise 1, the sequence's limit is found by normalizing numerator and denominator by the highest power, $n^2$, leaving the leading-coefficient ratio $4/2=2$. As in Exercise 7, factor the function's numerator as $(x-1)(x-3)$ and cancel $x-3$ for $x\ne3$, giving $f(x)=x-1$ near (but not at) $3$. This cancellation explains the line and its hole; the function's limit is also $2$.
 

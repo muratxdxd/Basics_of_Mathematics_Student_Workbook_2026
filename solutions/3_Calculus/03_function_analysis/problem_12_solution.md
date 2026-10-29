@@ -1,4 +1,4 @@
-﻿# Problem 12: A Function with an Absolute Value
+# Problem 12: A Function with an Absolute Value
 
 ## 1. Problem Statement
 Analyze
@@ -22,16 +22,18 @@ This problem applies foundational mathematical principles:
    The absolute value leaves the positive portions ($|x| \ge 2$) unchanged, while reflecting the negative dip ($x \in (-2, 2)$) vertically across the $x$-axis, turning the valley at $(0, -4)$ into an inverted parabolic peak at $(0, 4)$.
 
    ```text
-   Original y=x²−4                 After absolute value
-   y                              y
-   ↑                              ↑             ● (0,4)
-   |         ╱   ╲                |          ╭──┴──╮
-   0 ──────●───────●────→ x       0 ──────●──╯─────╰──●────→ x
-          (-2,0) (2,0)                    (-2,0)     (2,0)
-   |          ╲ ● ╱               |
-   |           (0,-4)             |
+   Original: y = x² - 4                    After Absolute Value: y = |x² - 4|
+   y                                       y
+   ^   \               /                   ^   \               /
+   |    \             /                    |    \   * (0,4)   /    arms rise to +inf
+   |     \           /   arms rise         |     \ . - ' - . /     for |x| > 2
+   0 -----*---------*------> x             0 -----*---------*------> x
+        (-2,0)    (2,0)                         (-2,0)    (2,0)  [sharp corners]
+   |        \     /                        |    (reflected arch)
+   |         ' - '                         |
+   |        * (0,-4)                       |
    ```
-   The original vertex $(0,-4)$ is reflected to the peak $(0,4)$, while $(\pm2,0)$ remain fixed and become corners of $|x^2-4|$.
+   In the original graph, the parabola has outer arms rising toward $+\infty$ for $|x| > 2$ and a negative dip with vertex $(0,-4)$. Applying the absolute value leaves the outer arms unchanged (since $x^2-4 \ge 0$) and reflects the negative dip across the $x$-axis into an upward arch with peak $(0,4)$, joining the outer arms at the sharp corners $(-2,0)$ and $(2,0)$.
 
 3. **Points Where the Derivative Does Not Exist:**
    The derivative does not exist at **$x = -2$** and **$x = 2$**.

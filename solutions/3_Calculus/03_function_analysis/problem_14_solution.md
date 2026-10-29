@@ -1,4 +1,4 @@
-﻿# Problem 14: Reconstructing Information from the Derivative
+# Problem 14: Reconstructing Information from the Derivative
 
 ## 1. Problem Statement
 It is known that
@@ -30,14 +30,18 @@ This problem applies foundational mathematical principles:
    The function rises from $-\infty$ to a local peak at $x = -2$, drops down to a local valley at $x = 1$, and then rises toward $+\infty$.
    ```text
    y
-   ↑
-   |            ● (-2,10/3)
-   |          ╱   ╲
-   |        ╱       ╲
-   0 ─────╱───────────● (0,0)────────────────────→ x
-   |                    ╲
-   |                      ╲       ● (1,-7/6)
-   |                        ╲____╱   then rises
+   ^
+   |            * (-2, 10/3) local max
+   |          /   \
+   |        /       \
+   0 -----/-----------* (0,0)--------------------/-------------> x
+   |                    \                      /
+   |                      \                  /   right tail rises
+   |                        \              /     toward +inf
+   |                          \          /
+   |                            * - - - '
+   |                         (1, -7/6)
+   |                         local min (bottom of valley)
    ```
    The peak and valley coordinates shown are for the particular antiderivative $g$ below. For the derivative information alone, the same qualitative shape may be shifted vertically.
 

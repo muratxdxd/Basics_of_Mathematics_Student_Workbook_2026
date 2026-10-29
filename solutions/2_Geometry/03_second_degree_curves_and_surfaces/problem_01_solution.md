@@ -1,4 +1,4 @@
-﻿# Problem 1: Recognizing Curves from Canonical Form
+# Problem 1: Recognizing Curves from Canonical Form
 
 ## 1. Problem Statement
 Recognize the curves
@@ -64,18 +64,20 @@ The sketches are qualitative; each axis is labeled, and the marked points corres
               (0,-3)
 ```
 
-3. Right-opening parabola (vertex $(0,0)$, focus $(2,0)$, directrix $x=-2$):
+3. Right-opening parabola $y^2 = 8x$ (vertex $(0,0)$, focus $(2,0)$, directrix $x=-2$; entirely on $x \ge 0$):
 ```text
                  y
-                 ^
-          .      |       .
-           '.    |     .'
-            '.   |   .'
- x=-2  - - -|----V--F--------> x
-            .'   |   '.
-           .'    |     '.
-          '      |       '
-                (0,0) (2,0)
+  x = -2         ^
+    :            |
+    :            |          . - '
+    :            |      . - '
+    :            |   . '
+    :            V · · · · F · · · · · · · · > x
+    :            |   . ' (2,0)
+    :            |      . - '
+    :            |          . - '
+    :            |
+               (0,0)
 ```
 
 4. Horizontal hyperbola (vertices $(\pm3,0)$; asymptotes $y=\pm2x/3$):

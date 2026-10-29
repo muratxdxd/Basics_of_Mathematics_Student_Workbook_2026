@@ -1,4 +1,4 @@
-﻿# Problem 8: The Second Derivative
+# Problem 8: The Second Derivative
 
 ## 1. Problem Statement
 For
@@ -33,18 +33,27 @@ This problem applies foundational mathematical principles:
    The sign changes of $f''$ at both roots show that the concavity changes there; the graph is concave up outside those roots and concave down between them.
 
 3. **W-shaped Sketch (features in left-to-right order):**
-   Both inflection points lie between the two minima and the central maximum. The curve is symmetric about the $y$-axis and rises at both ends.
+   The curve is symmetric about the $y$-axis, forms a complete W-shape, and rises toward $+\infty$ as $x \to \pm\infty$ beyond both minima. In left-to-right order:
+   - Outer left arm descends from $+\infty$, crossing the $x$-axis at $x = -2$.
+   - Reaches local minimum at $(-\sqrt{2}, -4)$.
+   - Changes curvature at inflection point $\left(-\sqrt{\frac{2}{3}}, -\frac{20}{9}\right)$.
+   - Reaches local maximum at $(0, 0)$.
+   - Changes curvature at inflection point $\left(\sqrt{\frac{2}{3}}, -\frac{20}{9}\right)$.
+   - Reaches local minimum at $(\sqrt{2}, -4)$.
+   - Outer right arm rises from the minimum, crossing the $x$-axis at $x = 2$, and continues upward toward $+\infty$.
+
    ```text
    y
-   ↑
-   0                         ● (0,0) local max
-   |                       ╱   ╲
-   |                    •         •   inflections at x=±√(2/3)
-   |                  ╱             ╲
-  -4       ●────────╯                 ╰────────●
-          (-√2,-4)                           (√2,-4)
-   ───────────────────────────────────────────────→ x
-          local min                            local min
+   ^   \                                                         /
+   |    \                                                       /   rises to +inf
+   |     \                                                     /
+   0 -----*-----------*------------* (0,0) max -------*-------*-------> x
+   |     (-2,0)        \          / \                /      (2,0)
+   |                    •        /   \              •   inflections at x = ±√(2/3)
+   |                     \      /     \            /
+  -4                      * - -'       '- - - - - *
+                       (-√2,-4)                  (√2,-4)
+                       local min                 local min
    ```
 
 ## 4. Verification and Consistency Checks

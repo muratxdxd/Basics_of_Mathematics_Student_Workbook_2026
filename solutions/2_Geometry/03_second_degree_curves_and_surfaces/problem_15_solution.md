@@ -1,4 +1,4 @@
-﻿# Problem 15: Recognition and Sketch Without a Given Name
+# Problem 15: Recognition and Sketch Without a Given Name
 
 ## 1. Problem Statement
 Consider the two equations:
@@ -35,19 +35,20 @@ This problem applies foundational mathematical principles:
      - Vertical semiaxis: $b = \sqrt{4} = 2$.
      - Vertices: $(1 \pm 3, -2) \implies (-2, -2)$ and $(4, -2)$.
      - Co-vertices: $(1, -2 \pm 2) \implies (1, -4)$ and $(1, 0)$.
-   - **Sketch:** The ellipse is centered at $(1,-2)$, with horizontal major axis and the four vertices/co-vertices shown:
+   - **Sketch:** The ellipse is centered at $(1,-2)$ and lies entirely in the lower half-plane $y \le 0$, tangent to the $x$-axis at $(1,0)$. The points $(1,0)$, $C(1,-2)$, and $(1,-4)$ align along the vertical axis $x=1$, while $(-2,-2)$, $C(1,-2)$, and $(4,-2)$ align along the horizontal line $y=-2$:
 ```text
                  y
                  ^
-                 |                 * (1,0)
-      ------------O----------------------------> x
-                 |        .-------' '-.
-                 |     .-'      |      '-.
-      (-2,-2) *--|----C-------------------* (4,-2)
-                 |     '-.      |      .-'
-                 |        '-----*-----'
-                 |            (1,-4)
-                 v          C=(1,-2)
+                 |                 x=1
+                 |                  :
+      -----------O------------------* (1,0)-------------> x  (y=0 tangent)
+                 |             . - ' ' - .
+                 |          . '     :     ' .
+     (-2,-2) *---| - - - - C - - - -:- - - - - * (4,-2)       y = -2
+                 |          . '     :     ' .  (semiaxis a=3)
+                 |             ' - .* - - '
+                 |                (1,-4)
+                 v              C=(1,-2)
 ```
 
 2. **Equation 2: $4x^2 + y^2 = z^2$:**

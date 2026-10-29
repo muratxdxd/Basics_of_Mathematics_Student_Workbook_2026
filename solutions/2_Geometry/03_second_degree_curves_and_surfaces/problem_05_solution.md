@@ -1,4 +1,4 @@
-﻿# Problem 5: Hyperbola and Asymptotes
+# Problem 5: Hyperbola and Asymptotes
 
 ## 1. Problem Statement
 For
@@ -33,20 +33,22 @@ This problem applies foundational mathematical principles:
    Hence the two branches approach the asymptotes $y=\pm\frac{3}{4}x$ with absolute vertical distance tending to zero.
 
 ## 4. Sketch
-Both branches, their vertices, axes, and asymptotes are shown schematically:
+The hyperbola has no real points in the central strip $-4 < x < 4$. The left branch stays entirely in $x \le -4$ with vertex $(-4,0)$, opening leftward toward the asymptotes $y = \pm \frac{3}{4}x$. The right branch stays entirely in $x \ge 4$ with vertex $(4,0)$, opening rightward toward the asymptotes:
 ```text
-                 y
-                 ^
-       \         |         /
-        \      .'|'.      /    y=3x/4
-         \   .'  |  '.   /
-          \.'    |    '. /
-<--- branch *----O----* branch ---> x
-          /'.    |    .'\
-         /   '.  |  .'   \         y=-3x/4
-        /      '.|.'      \
-       /         |         \
-            (-4,0) (4,0)
+                     y
+                     ^
+        \            |            /     asymptote y = 3x/4
+   . - ' \           |           / ' - .
+. '       \          |          /       ' .
+           \         |         /
+<--------- * --------O-------- * ---------> x
+(-4,0)     /         |         \      (4,0)
+. .       /          |          \       . .
+   ' - . /           |           \ . - '
+        /            |            \     asymptote y = -3x/4
+                     |
+            [ no real points ]
+              for -4 < x < 4
 ```
 
 ## 5. Verification and Consistency Checks

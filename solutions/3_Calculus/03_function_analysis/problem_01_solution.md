@@ -1,4 +1,4 @@
-﻿# Problem 1: A Cubic Polynomial
+# Problem 1: A Cubic Polynomial
 
 ## 1. Problem Statement
 Analyze the monotonicity and extrema of
@@ -33,17 +33,20 @@ This problem applies foundational mathematical principles:
    $$f''(x) = 6x - 6 = 0 \implies x = 1, \qquad f(1) = 1 - 3 + 2 = 0 \implies (1, 0).$$
 
 5. **Sketch:**
-   The curve rises to its local maximum, falls through the inflection point to its local minimum, and then rises again:
+   The cubic curve rises from $-\infty$ to the local maximum at $(0,2)$, decreases through the inflection point at $(1,0)$ to the local minimum at $(2,-2)$, and then rises continuously toward $+\infty$ for all $x > 2$:
    ```text
    y
-   ↑
-   2                 ● (0,2)
-   |              ╭──╯ ╲
-   0 ────────────╯───────● (1,0)────────────→ x
-   |                      ╲
-  -2                         ● (2,-2) ╭──
-   |                                     ╰──
-        increasing    decreasing    increasing
+   ^                                                 /
+   |                                               /   rises to +inf
+   2                 * (0,2) local max           /
+   |              . - ' ' - .                  /
+   0 -----------'-------------* (1,0)--------/------> x
+   |             (inflection)    \         /
+   |                              ' - . - '
+  -2                                  * (2,-2) local min
+   |
+        increasing       decreasing         strictly increasing
+      on (-inf, 0)        on (0, 2)            on (2, +inf)
    ```
 
 ## 4. Verification and Consistency Checks
