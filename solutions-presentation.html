@@ -4,21 +4,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101a31">
-  <title>Workbook Solutions · Presentation</title>
+  <title>Workbook Solutions · Learning Dashboard</title>
   <style>
     :root {
-      color-scheme: light;
-      --ink: #172238;
-      --muted: #69758b;
-      --line: #e4e8ef;
-      --paper: #fff;
-      --canvas: #f3f5fa;
-      --navy: #101a31;
-      --navy-2: #182642;
-      --blue: #4169f5;
-      --blue-soft: #edf1ff;
-      --teal: #c1f1e1;
-      --shadow: 0 24px 72px rgba(18, 29, 53, .10);
+      color-scheme: dark;
+      --ink: #e8edf7;
+      --muted: #94a3b8;
+      --line: #263248;
+      --paper: #111a2b;
+      --canvas: #080e19;
+      --navy: #080e19;
+      --navy-2: #111b2e;
+      --blue: #83a2ff;
+      --blue-soft: #1c2a48;
+      --teal: #8be4c4;
+      --shadow: 0 24px 72px rgba(0, 0, 0, .32);
     }
 
     * { box-sizing: border-box; }
@@ -273,10 +273,11 @@
     .solution-content th { background: #f3f5fa; color: #293852; }
     .solution-content hr { margin: 24px 0; border: 0; border-top: 1px solid var(--line); }
     .solution-content strong { color: #1d2a43; }
-    .solution-content .math-display { overflow-x: auto; margin: 16px 0; padding: 2px 0; text-align: center; }
-    .solution-content mjx-container { max-width: 100%; overflow-x: auto; overflow-y: hidden; }
-    .solution-content mjx-container:not([display="true"]) { display: inline-block; vertical-align: middle; }
-    .solution-content .math-fallback { overflow-x: auto; font-family: Georgia, serif; }
+    .solution-content .math-display { max-width: 100%; overflow: visible; margin: 16px 0; padding: 2px 0; text-align: center; }
+    .solution-content mjx-container { max-width: 100%; overflow: visible; }
+    .solution-content mjx-container:not([display="true"]) { display: inline-block; overflow: visible; vertical-align: middle; }
+    .solution-content .math-fallback { max-width: 100%; overflow: visible; font-family: Georgia, serif; }
+    .solution-content .katex, .solution-content .katex-display { max-width: 100%; overflow: visible; }
     .solution-content .sketch { border: 1px solid #e5e9f0; border-radius: 9px; background: #fafbfe; }
     .solution-content img { max-width: 100%; height: auto; }
     .limit-lab {
@@ -646,6 +647,160 @@
       font-weight: 800;
       letter-spacing: .02em;
     }
+
+    .shell { position: relative; z-index: 1; }
+    .main { min-width: 0; }
+    .topbar {
+      border-color: rgba(148, 163, 184, .12);
+      background: rgba(8, 14, 25, .88);
+    }
+    .top-context, .lesson-subtitle, .breadcrumb { color: #94a3b8; }
+    .icon-button, .nav-button {
+      border-color: #29364d;
+      background: #111a2b;
+      color: #d6deed;
+    }
+    .icon-button:hover, .nav-button:hover { border-color: #50658a; background: #17243a; }
+    .present-button { border-color: #4968ca; background: #4968ca; color: #fff; }
+    .reader { position: relative; z-index: 1; }
+    .lesson-title { color: #f0f4fc; }
+    .paper {
+      border-color: rgba(148, 163, 184, .14);
+      background: linear-gradient(145deg, rgba(17, 26, 43, .97), rgba(13, 21, 36, .97));
+      box-shadow: 0 24px 72px rgba(0, 0, 0, .28);
+    }
+    .solution-content { color: #cbd5e1; }
+    .solution-content h2 { border-color: #263248; color: #edf2fb; }
+    .solution-content h3, .solution-content strong { color: #e2eaf7; }
+    .solution-content blockquote { border-color: #6684dc; background: #15213a; color: #b6c3d8; }
+    .solution-content code { background: #1a2639; color: #b8c9ff; }
+    .solution-content pre { border-color: #2a3850; background: #0c1422; color: #d6deed; }
+    .solution-content table { color: #cbd5e1; }
+    .solution-content th, .solution-content td { border-color: #2a3850; }
+    .solution-content th { background: #172338; color: #e2eaf7; }
+    .solution-content hr { border-top-color: #29364d; }
+    .solution-content mjx-container { color: #f1f5fb !important; }
+    .solution-content mjx-container[display="true"] { display: block; overflow: visible; }
+    .solution-content .math-display, .solution-content .math-fallback,
+    .solution-content .katex, .solution-content .katex-display { overflow: visible; }
+    .limit-lab, .interactive-lab {
+      border-color: #29364d;
+      background: linear-gradient(145deg, #121d30, #0d1728);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, .18);
+    }
+    .limit-lab-title, .interactive-lab-title, .lab-metric-card strong { color: #e8edf7; }
+    .limit-lab-intro, .interactive-lab-intro, .limit-lab-readout { color: #a7b4c9; }
+    .limit-lab-equation, .limit-lab-card, .lab-metric-card,
+    .interactive-canvas-wrap, .lab-tab-btn, .lab-btn-action, .lab-btn-secondary {
+      border-color: #29364d;
+      background: #0b1422;
+      color: #dce5f4;
+    }
+    .limit-lab-frac > span:first-child { border-color: #dce5f4; }
+    .limit-lab-card span, .lab-metric-card span, .lab-slider-group label { color: #9aa9c0; }
+    .lab-controls-bar { border-color: #29364d; background: #0c1422; }
+    .lab-status-banner { border-color: #31466b; background: #14213a; color: #c7d7f6; }
+    .lab-status-banner.success, .limit-lab-takeaway {
+      border-color: #24644f;
+      background: #10291f;
+      color: #b6e8d2;
+    }
+    .interactive-lab .lab-metric-card[style] { border-color: #24644f !important; background: #10291f !important; }
+    .interactive-lab .lab-metric-card[style] strong { color: #8be4c4 !important; }
+    .lab-status-banner.success strong, .limit-lab-takeaway strong { color: #d1f6e5; }
+    .lab-status-banner.warning { border-color: #725b2c; background: #2b2414; color: #f1d89c; }
+    .keyboard-hint { color: #76869f; }
+    kbd { border-color: #34425a; background: #111a2b; color: #b8c4d8; }
+    .dashboard-overview {
+      position: relative;
+      z-index: 1;
+      width: min(1020px, calc(100% - 64px));
+      margin: 0 auto;
+      padding: 38px 0 42px;
+    }
+    .dashboard-heading { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .dashboard-kicker { margin: 0 0 7px; color: #8be4c4; font-size: 10px; font-weight: 800; letter-spacing: .15em; }
+    .dashboard-heading h1 { margin: 0; color: #f0f4fc; font-size: clamp(26px, 3.2vw, 36px); letter-spacing: -.04em; }
+    .dashboard-heading p:last-child { margin: 7px 0 0; color: #94a3b8; font-size: 13px; }
+    .dashboard-mark {
+      display: grid;
+      width: 58px;
+      height: 58px;
+      flex: 0 0 auto;
+      place-items: center;
+      border: 1px solid rgba(139, 228, 196, .28);
+      border-radius: 18px;
+      background: rgba(139, 228, 196, .08);
+      color: #8be4c4;
+      font: 34px Georgia, serif;
+    }
+    .dashboard-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 24px 0 28px; }
+    .dashboard-stat, .curriculum-card {
+      min-width: 0;
+      border: 1px solid #25334a;
+      border-radius: 14px;
+      background: linear-gradient(145deg, #121c2d, #0e1726);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .12);
+    }
+    .dashboard-stat { padding: 16px 18px; }
+    .dashboard-stat-label { color: #94a3b8; font-size: 11px; font-weight: 650; }
+    .dashboard-stat-value { display: block; margin-top: 5px; color: #f1f5fb; font-size: 25px; font-weight: 800; letter-spacing: -.04em; }
+    .dashboard-stat-detail { display: block; margin-top: 2px; color: #75859e; font-size: 10px; }
+    .curriculum-heading { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px; margin-bottom: 12px; }
+    .curriculum-heading h2 { margin: 0; color: #e8edf7; font-size: 16px; }
+    .curriculum-heading span { color: #7f8ea5; font-size: 11px; }
+    .curriculum-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+    .curriculum-card { display: block; width: 100%; padding: 15px 16px; border: 1px solid #25334a; color: inherit; font: inherit; text-align: left; transition: border-color .16s ease, transform .16s ease; }
+    .curriculum-card:hover { transform: translateY(-2px); border-color: #4a6389; }
+    .curriculum-card-top { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .curriculum-card h3 { margin: 0; color: #e4ebf6; font-size: 14px; }
+    .curriculum-card-icon { color: #8be4c4; font-size: 19px; }
+    .curriculum-card p { margin: 6px 0 13px; color: #8998af; font-size: 10px; }
+    .curriculum-progress { height: 5px; overflow: hidden; border-radius: 8px; background: #27344a; }
+    .curriculum-progress span { display: block; width: 0; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #70d7b4, #83a2ff); transition: width .25s ease; }
+    .curriculum-card-meta { display: flex; justify-content: space-between; gap: 8px; margin-top: 8px; color: #7f8ea5; font-size: 10px; }
+    .ambient-math { position: fixed; z-index: 0; inset: 0; overflow: hidden; pointer-events: none; }
+    .ambient-math span { position: absolute; color: #9ab4ff; opacity: .045; font: 700 clamp(24px, 4vw, 52px) Georgia, serif; animation: drift 28s ease-in-out infinite alternate; }
+    .ambient-math span:nth-child(1) { top: 13%; left: 36%; }
+    .ambient-math span:nth-child(2) { top: 70%; left: 41%; animation-delay: -5s; }
+    .ambient-math span:nth-child(3) { top: 28%; right: 7%; animation-delay: -11s; }
+    .ambient-math span:nth-child(4) { top: 78%; right: 20%; animation-delay: -17s; }
+    .ambient-math span:nth-child(5) { top: 52%; left: 62%; animation-delay: -8s; }
+    .ambient-math span:nth-child(6) { top: 43%; left: 12%; animation-delay: -14s; }
+    .ambient-math span:nth-child(7) { top: 7%; right: 26%; animation-delay: -20s; }
+    @keyframes drift { from { transform: translate3d(-7px, 5px, 0) rotate(-5deg); } to { transform: translate3d(12px, -13px, 0) rotate(7deg); } }
+    .concept-demo { margin: 20px 0; padding: 18px; border: 1px solid #29364d; border-radius: 14px; background: #0c1422; }
+    .concept-demo h3 { margin: 0 0 5px; color: #e8edf7; font-size: 15px; }
+    .concept-demo p { margin: 0 0 12px; color: #9aa9c0; font-size: 12px; }
+    .concept-demo canvas { display: block; width: 100%; height: auto; border: 1px solid #26344a; border-radius: 10px; background: #0a111d; }
+    .concept-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 12px; color: #b8c4d8; font-size: 12px; }
+    .concept-controls input { flex: 1 1 160px; accent-color: #8be4c4; }
+    .placeholder-note { padding: 14px 16px; border: 1px solid #35455f; border-radius: 10px; background: #121e31; color: #b9c6da; }
+    .reader[hidden], .dashboard-overview[hidden] { display: none; }
+    body.presentation-mode .dashboard-overview { display: none; }
+    @media (max-width: 850px) {
+      .dashboard-overview { width: min(100% - 30px, 760px); padding-top: 26px; }
+    }
+    @media (max-width: 600px) {
+      .dashboard-overview { width: calc(100% - 24px); padding: 23px 0 30px; }
+      .dashboard-stats { gap: 7px; margin: 18px 0 22px; }
+      .dashboard-stat { padding: 12px 10px; }
+      .dashboard-stat-value { font-size: 21px; }
+      .dashboard-stat-detail { font-size: 9px; }
+      .curriculum-grid { grid-template-columns: 1fr; gap: 8px; }
+      .curriculum-card { padding: 12px 14px; }
+      .dashboard-mark { width: 44px; height: 44px; border-radius: 14px; font-size: 26px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .ambient-math span { animation: none; }
+    }
+    @media print {
+      body, .main { background: #fff !important; color: #172238 !important; }
+      .solution-content, .solution-content p, .solution-content li, .solution-content table { color: #263248 !important; }
+      .solution-content h2, .solution-content h3, .solution-content strong { color: #182640 !important; }
+      .solution-content mjx-container { color: #172238 !important; }
+      .solution-content code, .solution-content pre { color: #263248 !important; }
+    }
   </style>
 </head>
 <body>
@@ -677,12 +832,30 @@
           <span class="top-context">BASICS OF MATHEMATICS · SOLUTION WALKTHROUGH</span>
         </div>
         <div class="top-actions">
+          <button class="icon-button" id="dashboard-button" type="button" aria-controls="dashboard-overview">Dashboard</button>
           <button class="icon-button" id="print-button" type="button" title="Print or save the current solution as PDF">Print / PDF</button>
           <button class="present-button" id="present-button" type="button" title="Toggle presentation mode (F)">Present <span aria-hidden="true">↗</span></button>
         </div>
       </header>
 
-      <section class="reader" aria-live="polite">
+      <section class="dashboard-overview" id="dashboard-overview" aria-labelledby="dashboard-title">
+        <div class="dashboard-heading">
+          <div>
+            <p class="dashboard-kicker">WINTER 2026 · LEARNING DASHBOARD</p>
+            <h1 id="dashboard-title">Explore the curriculum</h1>
+            <p>Choose a subject to open its worked solutions and interactive visualizers.</p>
+          </div>
+          <span class="dashboard-mark" aria-hidden="true">∫</span>
+        </div>
+        <div class="dashboard-stats" id="dashboard-stats"></div>
+        <div class="curriculum-heading">
+          <h2>Explore the curriculum</h2>
+          <span>Pick a subject to get started</span>
+        </div>
+        <div class="curriculum-grid" id="curriculum-grid"></div>
+      </section>
+
+      <section class="reader" id="solution-reader" aria-live="polite" hidden>
         <div class="lesson-head">
           <div class="breadcrumb">
             <span id="subject-label">Algebra</span><span class="dot">/</span>
@@ -704,6 +877,9 @@
       </section>
     </main>
   </div>
+  <div class="ambient-math" aria-hidden="true">
+    <span>π</span><span>∑</span><span>∫</span><span>∞</span><span>178</span><span>Δ</span><span>∇</span>
+  </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
   <script>
@@ -724,6 +900,9 @@
     const content = document.getElementById("solution-content");
     const searchInput = document.getElementById("search");
     const toast = document.getElementById("toast");
+    const dashboard = document.getElementById("dashboard-overview");
+    const reader = document.getElementById("solution-reader");
+    const viewedSolutions = new Set();
     let currentIndex = Math.max(0, solutions.findIndex(solution =>
       solution.path === "1_Algebra/01_matrices_and_operations" && solution.number === 11
     ));
@@ -874,6 +1053,173 @@
         output.push(`<p>${inlineMarkdown(paragraph.join(" "))}</p>`);
       }
       return output.join("\n");
+    }
+
+    function isUnassignedSolution(solution) {
+      return /Not Assigned/i.test(solution.title) && /Not applicable\./i.test(solution.markdown);
+    }
+
+    function buildDashboard() {
+      const availableSolutions = solutions.filter(solution => !isUnassignedSolution(solution));
+      const stats = document.getElementById("dashboard-stats");
+      stats.innerHTML = `
+        <div class="dashboard-stat"><span class="dashboard-stat-label">Total exercises</span><strong class="dashboard-stat-value">${solutions.length}</strong><span class="dashboard-stat-detail">Workbook slots across all subjects</span></div>
+        <div class="dashboard-stat"><span class="dashboard-stat-label">Solutions available</span><strong class="dashboard-stat-value">${availableSolutions.length}</strong><span class="dashboard-stat-detail">Worked answers ready to explore</span></div>
+        <div class="dashboard-stat"><span class="dashboard-stat-label">Your progress</span><strong class="dashboard-stat-value" id="dashboard-progress-value">0%</strong><span class="dashboard-stat-detail" id="dashboard-progress-detail">0 of ${availableSolutions.length} solutions explored</span></div>
+      `;
+      document.getElementById("side-total").textContent = `${availableSolutions.length} solutions`;
+      const icons = { Algebra: "∑", Geometry: "◇", Calculus: "∫" };
+      const descriptions = {
+        Algebra: "Matrices, determinants and systems",
+        Geometry: "Vectors, planes and conics",
+        Calculus: "Limits, derivatives and integrals"
+      };
+      const grid = document.getElementById("curriculum-grid");
+      grid.replaceChildren();
+      for (const group of groups) {
+        const groupSolutions = availableSolutions.filter(solution => solution.group === group);
+        const card = document.createElement("button");
+        card.className = "curriculum-card";
+        card.type = "button";
+        card.dataset.group = group;
+        card.innerHTML = `
+          <div class="curriculum-card-top"><h3>${escapeHtml(group)}</h3><span class="curriculum-card-icon" aria-hidden="true">${icons[group] || "∂"}</span></div>
+          <p>${escapeHtml(descriptions[group] || "Explore worked mathematics solutions")}</p>
+          <div class="curriculum-progress" role="progressbar" aria-label="${escapeHtml(group)} progress" aria-valuemin="0" aria-valuemax="${groupSolutions.length}" aria-valuenow="0"><span></span></div>
+          <div class="curriculum-card-meta"><span>${groupSolutions.length} solutions</span><span data-group-count>0 explored</span></div>
+        `;
+        card.addEventListener("click", () => {
+          const firstIndex = solutions.findIndex(solution => solution.group === group && !isUnassignedSolution(solution));
+          if (firstIndex >= 0) selectSolution(firstIndex);
+        });
+        grid.append(card);
+      }
+    }
+
+    function updateDashboardProgress() {
+      const availableSolutions = solutions.filter(solution => !isUnassignedSolution(solution));
+      const explored = availableSolutions.filter(solution => viewedSolutions.has(solution.id)).length;
+      const percent = availableSolutions.length ? Math.round((explored / availableSolutions.length) * 100) : 0;
+      const value = document.getElementById("dashboard-progress-value");
+      const detail = document.getElementById("dashboard-progress-detail");
+      if (value) value.textContent = `${percent}%`;
+      if (detail) detail.textContent = `${explored} of ${availableSolutions.length} solutions explored`;
+      document.querySelectorAll(".curriculum-card").forEach(card => {
+        const groupSolutions = availableSolutions.filter(solution => solution.group === card.dataset.group);
+        const groupExplored = groupSolutions.filter(solution => viewedSolutions.has(solution.id)).length;
+        const progress = groupSolutions.length ? (groupExplored / groupSolutions.length) * 100 : 0;
+        const bar = card.querySelector(".curriculum-progress");
+        bar.setAttribute("aria-valuenow", String(groupExplored));
+        bar.firstElementChild.style.width = `${progress}%`;
+        card.querySelector("[data-group-count]").textContent = `${groupExplored} explored`;
+      });
+    }
+
+    function showDashboard() {
+      if (stopLimitLab) {
+        stopLimitLab();
+        stopLimitLab = null;
+      }
+      if (activeLabCleanup) {
+        activeLabCleanup();
+        activeLabCleanup = null;
+      }
+      dashboard.hidden = false;
+      reader.hidden = true;
+      document.body.classList.remove("menu-open", "presentation-mode");
+      document.title = "Workbook Solutions · Learning Dashboard";
+      if (location.hash) history.replaceState(null, "", `${location.pathname}${location.search}`);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function renderUnassignedSummary() {
+      return `
+        <h2>Exercise not assigned</h2>
+        <p>This workbook slot is intentionally unassigned. No problem statement or worked solution is available for it.</p>
+        <p class="placeholder-note"><strong>Why this card is here:</strong> the presentation keeps the workbook numbering intact so links and chapter navigation remain consistent.</p>
+        <section class="concept-demo" aria-labelledby="concept-demo-title">
+          <h3 id="concept-demo-title">Calculus concept preview: turning points</h3>
+          <p>This independent example shows how a derivative changes across a curve; it is a learning visualizer, not the solution to this unassigned exercise.</p>
+          <canvas id="concept-canvas" width="720" height="260" role="img" aria-label="Graph of x squared minus 4 with a movable tangent"></canvas>
+          <div class="concept-controls">
+            <label for="concept-slider">Move along the curve: <span id="concept-x-value">x = 0.0</span></label>
+            <input id="concept-slider" type="range" min="-3" max="3" step="0.1" value="0" aria-describedby="concept-readout">
+            <output id="concept-readout" for="concept-slider">f'(x) = 0.0</output>
+          </div>
+        </section>
+      `;
+    }
+
+    function mountUnassignedConceptLab() {
+      const canvas = document.getElementById("concept-canvas");
+      const slider = document.getElementById("concept-slider");
+      const xValue = document.getElementById("concept-x-value");
+      const readout = document.getElementById("concept-readout");
+      const ctx = canvas.getContext("2d");
+      if (!ctx) throw new Error("Unable to initialize the calculus concept canvas.");
+      const width = canvas.width;
+      const height = canvas.height;
+      const left = 42;
+      const right = width - 18;
+      const top = 18;
+      const bottom = height - 30;
+      const toX = x => left + ((x + 3) / 6) * (right - left);
+      const toY = y => top + ((5 - y) / 10) * (bottom - top);
+
+      function draw() {
+        const x = Number(slider.value);
+        const y = x * x - 4;
+        const slope = 2 * x;
+        ctx.clearRect(0, 0, width, height);
+        ctx.strokeStyle = "#1c2a3e";
+        ctx.lineWidth = 1;
+        for (let value = -3; value <= 3; value++) {
+          ctx.beginPath();
+          ctx.moveTo(toX(value), top);
+          ctx.lineTo(toX(value), bottom);
+          ctx.stroke();
+        }
+        for (let value = -4; value <= 4; value += 2) {
+          ctx.beginPath();
+          ctx.moveTo(left, toY(value));
+          ctx.lineTo(right, toY(value));
+          ctx.stroke();
+        }
+        ctx.strokeStyle = "#6b7b94";
+        ctx.beginPath();
+        ctx.moveTo(left, toY(0));
+        ctx.lineTo(right, toY(0));
+        ctx.moveTo(toX(0), top);
+        ctx.lineTo(toX(0), bottom);
+        ctx.stroke();
+        ctx.strokeStyle = "#8be4c4";
+        ctx.lineWidth = 2.5;
+        ctx.beginPath();
+        for (let step = 0; step <= 120; step++) {
+          const curveX = -3 + step / 20;
+          const pointX = toX(curveX);
+          const pointY = toY(curveX * curveX - 4);
+          if (step === 0) ctx.moveTo(pointX, pointY);
+          else ctx.lineTo(pointX, pointY);
+        }
+        ctx.stroke();
+        ctx.strokeStyle = "#9bb2ff";
+        ctx.lineWidth = 1.5;
+        ctx.beginPath();
+        ctx.moveTo(toX(Math.max(-3, x - 1)), toY(y + slope * (Math.max(-3, x - 1) - x)));
+        ctx.lineTo(toX(Math.min(3, x + 1)), toY(y + slope * (Math.min(3, x + 1) - x)));
+        ctx.stroke();
+        ctx.fillStyle = "#ffffff";
+        ctx.beginPath();
+        ctx.arc(toX(x), toY(y), 5, 0, Math.PI * 2);
+        ctx.fill();
+        xValue.textContent = `x = ${x.toFixed(1)}`;
+        readout.textContent = `f'(${x.toFixed(1)}) = ${slope.toFixed(1)}`;
+      }
+
+      slider.addEventListener("input", draw);
+      draw();
+      return () => slider.removeEventListener("input", draw);
     }
 
     function buildNavigation() {
@@ -1136,7 +1482,7 @@
         </div>
 
         <div class="lab-status-banner success" id="opt-status-banner">
-          <span id="opt-status-text">🌟 <strong>Optimal State Reached:</strong> Exactly 50% budget ($15,000 PLN) for parallel side, 50% ($15,000 PLN) for perpendicular sides! Area is maximized at 750 m² where derivative A'(30) = 0.</span>
+          <span id="opt-status-text">🌟 <strong>Optimal State Reached:</strong> Exactly 50% budget (15,000 PLN) for parallel side, 50% (15,000 PLN) for perpendicular sides! Area is maximized at 750 m² where derivative A'(30) = 0.</span>
         </div>
       `;
       content.insertBefore(lab, targetAfter);
@@ -1383,7 +1729,7 @@
 
         if (Math.abs(data.x - 30) < 0.5) {
           statusBanner.className = "lab-status-banner success";
-          statusText.innerHTML = "🌟 <strong>Optimum Reached!</strong> Budget splits precisely 50% ($15,000 PLN) / 50% ($15,000 PLN). The derivative <strong>A'(30) = 0</strong> confirms the exact global maximum area of <strong>750 m²</strong>!";
+          statusText.innerHTML = "🌟 <strong>Optimum Reached!</strong> Budget splits precisely 50% (15,000 PLN) / 50% (15,000 PLN). The derivative <strong>A'(30) = 0</strong> confirms the exact global maximum area of <strong>750 m²</strong>!";
         } else if (data.x < 30) {
           statusBanner.className = "lab-status-banner";
           statusText.innerHTML = `↗ <strong>Derivative is Positive (A' = +${data.slope.toFixed(2)}):</strong> Increasing x adds more enclosed area than it costs in depth. Increase x toward 30m!`;
@@ -2507,24 +2853,35 @@
         stopLimitLab();
         stopLimitLab = null;
       }
-      currentIndex = Math.max(0, Math.min(index, solutions.length - 1));
-      const solution = solutions[currentIndex];
-      document.getElementById("subject-label").textContent = solution.group;
-      document.getElementById("section-label").textContent = solution.section;
-      document.getElementById("problem-label").textContent = `Problem ${solution.number}`;
-      document.getElementById("lesson-title").textContent = solution.title.replace(/^Problem\s+\d+\s*:\s*/i, "");
-      document.getElementById("lesson-subtitle").textContent = `${solution.section} · Problem ${solution.number} of 15`;
-      document.getElementById("slide-count").textContent = `${String(currentIndex + 1).padStart(3, "0")} / ${solutions.length}`;
-      document.getElementById("previous-button").disabled = currentIndex === 0;
-      document.getElementById("next-button").disabled = currentIndex === solutions.length - 1;
-      content.innerHTML = renderMarkdown(solution.markdown.replace(/^#\s+.+(?:\n|$)/, ""));
-            if (activeLabCleanup) {
+      if (activeLabCleanup) {
         activeLabCleanup();
         activeLabCleanup = null;
       }
-      if (solution.path === "3_Calculus/01_limits" && solution.number === 1) {
+      currentIndex = Math.max(0, Math.min(index, solutions.length - 1));
+      const solution = solutions[currentIndex];
+      const unassigned = isUnassignedSolution(solution);
+      dashboard.hidden = true;
+      reader.hidden = false;
+      document.getElementById("subject-label").textContent = solution.group;
+      document.getElementById("section-label").textContent = solution.section;
+      document.getElementById("problem-label").textContent = `Problem ${solution.number}`;
+      document.getElementById("lesson-title").textContent = unassigned
+        ? "Unassigned exercise slot"
+        : solution.title.replace(/^Problem\s+\d+\s*:\s*/i, "");
+      document.getElementById("lesson-subtitle").textContent = unassigned
+        ? `${solution.section} · Problem ${solution.number} of 15 · Not assigned`
+        : `${solution.section} · Problem ${solution.number} of 15`;
+      document.getElementById("slide-count").textContent = `${String(currentIndex + 1).padStart(3, "0")} / ${solutions.length}`;
+      document.getElementById("previous-button").disabled = currentIndex === 0;
+      document.getElementById("next-button").disabled = currentIndex === solutions.length - 1;
+      content.innerHTML = unassigned
+        ? renderUnassignedSummary()
+        : renderMarkdown(solution.markdown.replace(/^#\s+.+(?:\n|$)/, ""));
+      if (unassigned) {
+        activeLabCleanup = mountUnassignedConceptLab();
+      } else if (solution.path === "3_Calculus/01_limits" && solution.number === 1) {
         activeLabCleanup = mountLimitLab();
-      } else if (solution.path === "3_Calculus/05_applications" && (solution.number === 12 || solution.number === 13)) {
+      } else if (solution.path === "3_Calculus/05_applications" && solution.number === 12) {
         activeLabCleanup = mountOptimizationLab();
       } else if (solution.path === "2_Geometry/01_vectors" && (solution.number === 1 || solution.number === 5)) {
         activeLabCleanup = mountVectorLab();
@@ -2544,19 +2901,26 @@
         }
       });
       if (updateHash) history.replaceState(null, "", `#${solution.id}`);
+      if (!unassigned) viewedSolutions.add(solution.id);
+      updateDashboardProgress();
       if (window.MathJax && window.MathJax.typesetPromise) {
         window.MathJax.typesetClear([content]);
         window.MathJax.typesetPromise([content]).catch(() => showToast("Some equations could not be typeset. Check your internet connection."));
       }
-      document.title = `${solution.title} · Workbook Solutions`;
+      document.title = `${unassigned ? "Unassigned exercise slot" : solution.title} · Workbook Solutions`;
       document.body.classList.remove("menu-open");
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
     buildNavigation();
+    buildDashboard();
+    updateDashboardProgress();
     const hashIndex = solutions.findIndex(solution => `#${solution.id}` === location.hash);
-    if (hashIndex >= 0) currentIndex = hashIndex;
-    selectSolution(currentIndex, false);
+    if (hashIndex >= 0) selectSolution(hashIndex, false);
+    else {
+      dashboard.hidden = false;
+      reader.hidden = true;
+    }
 
     navigation.addEventListener("click", event => {
       const button = event.target.closest(".nav-problem");
@@ -2579,6 +2943,7 @@
 
     document.getElementById("previous-button").addEventListener("click", () => selectSolution(currentIndex - 1));
     document.getElementById("next-button").addEventListener("click", () => selectSolution(currentIndex + 1));
+    document.getElementById("dashboard-button").addEventListener("click", showDashboard);
     document.getElementById("print-button").addEventListener("click", () => window.print());
     document.getElementById("menu-button").addEventListener("click", () => document.body.classList.toggle("menu-open"));
     document.getElementById("present-button").addEventListener("click", async () => {
